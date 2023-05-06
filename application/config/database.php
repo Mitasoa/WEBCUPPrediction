@@ -75,12 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'port'   => 5432,
-	'hostname' => 'localhost',
-	'username' => 'postgres',
-	'password' => '3306Celestin',
-	'database' => 'ia',
-	'dbdriver' => 'postgre',
+	'port'	=> '3306',
+	'hostname' => 'run1.hodi.host',
+	'username' => 'aleateam_dbtest',
+	'password' => 'db:test@1234',
+	'database' => 'aleateam_iadatabase',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
