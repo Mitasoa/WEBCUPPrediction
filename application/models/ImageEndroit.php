@@ -23,8 +23,8 @@
             $this->description = $description;
         }
 
-        public function liste($idendroit){
-            $requete="select * from imageendroit where idendroit = ".$idendroit;
+        public function liste($endroit){
+            $requete = "select img.*,e.endroit from imageendroit img join endroit e on img.idendroit = e.id where endroit = '".$endroit."'";
             $query=$this->db->query($requete);
             return $query->result_array();
         }

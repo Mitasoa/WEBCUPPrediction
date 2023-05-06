@@ -4,7 +4,7 @@
     {
 
         public function insert($idrevedescription, $idsentiment){
-            $requete = "insert into reveemotion(id,idrevedescription,idsentiment) values (default,%s,%s)";
+            $requete = "insert into reveemotion(idrevedescription,idsentiment) values (%s,%s)";
             $requete = sprintf($requete, $idrevedescription, $idsentiment);
             $this->db->query($requete);
         }

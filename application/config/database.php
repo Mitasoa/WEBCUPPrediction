@@ -98,9 +98,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'port'   => 5432,
+	'port'   => 3306,
 	'hostname' => 'localhost',
-	'username' => '',
+	'username' => 'root',
 	'password' => 'root',
 	'database' => 'alea',
 	'dbdriver' => 'mysqli',

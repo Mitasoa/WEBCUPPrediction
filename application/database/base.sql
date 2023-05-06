@@ -14,6 +14,8 @@ CREATE TABLE utilisateur (
 );
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
+insert into utilisateur(email,mdp,datedenaissance) values ('lalaina.nancia64@gmail.com','1234',null);
+
 CREATE TABLE admin (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   email varchar(200) NOT NULL,
@@ -24,11 +26,16 @@ CREATE TABLE typereve (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   type varchar(50) NOT NULL
 );
+insert into typereve(type) values ('cauchemar');
+insert into typereve(type) values ('creatif');
 
 CREATE TABLE endroit (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   endroit varchar(50) NOT NULL
 );
+insert into endroit(endroit) values ('parking');
+insert into endroit(endroit) values ('foret');
+insert into endroit(endroit) values ('hotel');
 
 CREATE TABLE imageendroit (
   id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -37,6 +44,13 @@ CREATE TABLE imageendroit (
   description varchar(255)
 );
 ALTER TABLE imageendroit ADD FOREIGN KEY(idendroit) REFERENCES endroit(id);
+
+insert into imageendroit(idendroit,image,description) values (1,'image1.jpg','Parking public');
+insert into imageendroit(idendroit,image,description) values (1,'image2.jpg','Parking sous-sol');
+insert into imageendroit(idendroit,image,description) values (2,'image3.jpg','Foret dense');
+insert into imageendroit(idendroit,image,description) values (2,'image4.jpg','Parc national');
+insert into imageendroit(idendroit,image,description) values (3,'image5.jpg','Dans une chambre');
+insert into imageendroit(idendroit,image,description) values (3,'image6.jpg','A l exterieur');
 
 CREATE TABLE appreciation (
   id INT PRIMARY KEY AUTO_INCREMENT, 
