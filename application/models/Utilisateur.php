@@ -68,7 +68,12 @@
         }
         public function insererUtilisateur()
         {
+            if($this->getnom()==''){
+                $sql = "INSERT INTO utilisateur values (default,".$this->db->escape($this->getemail()).",sha1(".$this->db->escape($this->getmdp())."),default,default,default,default";
+            }
+            else{
             $sql = "INSERT INTO utilisateur values (default,".$this->db->escape($this->getemail()).",sha1(".$this->db->escape($this->getmdp())."),".$this->db->escape($this->getnom()).",".$this->db->escape($this->getprenoms()).",".$this->db->escape($this->getidsexe()).",".$this->db->escape($this->getdatedenaissance())."";
+            }
             $this->db->query($sql);
         }
     }

@@ -10,14 +10,10 @@ CREATE TABLE utilisateur (
   nom varchar(100) DEFAULT NULL,
   prenoms varchar(200) DEFAULT NULL,
   idsexe int DEFAULT 0,
-  datedenaissance date
+  datedenaissance date default NULL 
 );
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
-CREATE TABLE typereve (
-  id INT PRIMARY KEY AUTO_INCREMENT, 
-  type varchar(50) NOT NULL
-);
 
 CREATE TABLE endroit (
   id INT PRIMARY KEY AUTO_INCREMENT, 
