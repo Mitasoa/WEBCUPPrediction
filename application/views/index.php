@@ -17,6 +17,11 @@
     <?php include 'components/head.php'; ?>
     <!-- Hero Section Begin -->
     <?php include 'components/hero.php'; ?>
+
+    <!-- Decouverte -->
+    <?php include 'components/decouverte.php'; ?>
+    <!-- Decouverte -->
+    <?php include 'components/service.php'; ?>
     <!-- Hero Section End -->
 
     <!-- Latest Blog Section Begin -->

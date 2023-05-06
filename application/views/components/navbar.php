@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-2">
                 <div class="header__logo">
-                    <STRONG style="color: white; font-size: 30px;" >IA ACTU</STRONG>
+                    <STRONG style="color: white; font-size: 30px;" >ORINIX</STRONG>
                 </div>
             </div>
             <div class="col-lg-10">
