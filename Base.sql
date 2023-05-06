@@ -6,7 +6,7 @@ CREATE TABLE sexe (
 CREATE TABLE utilisateur (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   email varchar(200) NOT NULL,
-  mdp varchar(100) NOT NULL, 
+  mdp varchar(100) default NULL, 
   nom varchar(200) DEFAULT NULL,
   idsexe int DEFAULT 3,
   datedenaissance date default NULL,

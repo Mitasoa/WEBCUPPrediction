@@ -40,4 +40,9 @@ class AppreciationController extends CI_Controller
             redirect(base_url('Welcome/index?error=ok'));
         }
     }
+    public function listerappreciation(){
+        $this->load->model('Appreciation');
+        $data['appreciation']=$this->Appreciation->listerappreciation();
+        $this->load->view('pages/accueil');
+    }
 }

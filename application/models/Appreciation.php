@@ -35,5 +35,11 @@ class Appreciation extends CI_Model
         $sql = "INSERT INTO appreciation values (default," . $this->db->escape($this->getetoile()) . "," . $this->db->escape($this->getcommentaire()) . ")";
         $this->db->query($sql);
     }
+    public function listerappreciation()
+    {
+        $requete = "SELECT * FROM appreciation";
+        $requete = $this->db->query($requete);
+        return $requete->result_array();
+    }
 }
 ?>

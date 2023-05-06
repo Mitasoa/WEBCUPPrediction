@@ -95,7 +95,9 @@ class UtilisateurController extends CI_Controller
                 }
                 else{
                     $user->setemail($data['email']);
-                    $user->setmdp();
+                    $user->setnom($data['name']);
+                    $user->setgoogleid($data['id']);
+                    $user->insererUtilisateur();
                 }
 		        var_dump($data);
 		    }
