@@ -63,6 +63,37 @@ class UtilisateurController extends CI_Controller
             redirect(base_url('Welcome/indexAppro?error=ok'));
         }
     }
+    public function connexionviagoogle() {	
+		require_once 'assets/google-api-php-client--PHP8.0/vendor/autoload.php';
+
+		$client = new Google_Client();
+		$client->setClientId('1002772112015-tb8hjgpfl1mbga023tcj7nq2hmlmlsu7.apps.googleusercontent.com');
+		$client->setClientSecret('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');
+		$client->setRedirectUri('https://test-production-4020.up.railway.app/');
+		$client->addScope('email');
+		$client->addScope('profile');
+
+		if(isset($_GET['code'])) {
+		    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+		    if(!isset($token['error'])) {
+		        $client->setAccessToken($token['access_token']);
+
+		        $google_oauth = new Google_Service_Oauth2($client);
+		        $google_account_info = $google_oauth->userinfo->get();
+
+		        $data = array(
+		            'email' => $google_account_info->email,
+		            'picture' => $google_account_info->picture,
+		            'name' => $google_account_info->name,
+		            'id' => $google_account_info->id
+		        );
+		        $this->session->set_userdata('google_auth', $data);
+		        var_dump($data);
+		    }
+		}
+		$data['client'] = $client;
+		$this->load->view('pages/login',$data);
+	}
 // public function ajoutArticle()
 // {
 // 	if (isset($_SESSION['idAdministrator'])) {

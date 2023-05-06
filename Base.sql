@@ -10,7 +10,8 @@ CREATE TABLE utilisateur (
   nom varchar(100) DEFAULT NULL,
   prenoms varchar(200) DEFAULT NULL,
   idsexe int DEFAULT 0,
-  datedenaissance date default NULL 
+  datedenaissance date default NULL,
+  googleid varchar(30) default NULL
 );
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
