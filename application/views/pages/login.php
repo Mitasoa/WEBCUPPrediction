@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="../assets/login/login/login.css">
-    <link rel="stylesheet" href="../assets/login/text-anim/text-anim.css">
+    <link rel="stylesheet" href="<?php echo site_url('assets/login/login/login.css'); ?>">
+    <link rel="stylesheet" href="<?php echo site_url('assets/login/text-anim/text-anim.css'); ?>">
 </head>
 
 
@@ -29,7 +29,7 @@
                 <input class="form__input" type="text" placeholder="Email" name="email">
                 <input class="form__input" type="password" placeholder="Password" name="mdp">
                 <button type="submit" style="background-color: #4B70E2;" class="btn-google">SIGN UP</button>
-                    <img src="../assets/img/google.png" alt="Google Icon"> <a href="<?php echo base_url('UtilisateurController/connexionviagoogle');?>">Se connecter avec Google</a>
+                    <img src="<?php echo site_url('assets/img/google.png'); ?>" alt="Google Icon"> <a href="<?php echo base_url('UtilisateurController/connexionviagoogle');?>">Se connecter avec Google</a>
                 </a>
 
             </form>
@@ -168,7 +168,8 @@
                 <input class="form__input" type="text" placeholder="Email" name="email">
                 <input class="form__input" type="password" placeholder="Password" name="mdp">
                 <button style="background-color: #4B70E2;" class="btn-google">SIGN IN</button>
-                    <img src="../assets/img/google.png" alt="Google Icon"> Se connecter avec Google
+                <a class="btn-google">
+                    <img src="<?php echo site_url('assets/img/google.png'); ?>"  alt="Google Icon"> Se connecter avec Google
                 </a>
                 <!-- <a class="form__link">Forgot your password?</a> -->
                 
@@ -208,12 +209,12 @@
             </div>
         </div>
     </div>
-    <script src="../assets/login/main.js"></script>
+    <script src="<?php echo site_url('assets/login/main.js'); ?>"></script>
 </body>
 
 </html>
 <!-- partial -->
-<script src="../assets/login/login/login.js"></script>
+<script src="<?php echo site_url('assets/login/login/login.js'); ?>"></script>
 
 </body>
 <style type="text/css">
