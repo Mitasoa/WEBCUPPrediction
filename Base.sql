@@ -98,7 +98,8 @@ CREATE TABLE destin (
   photoillustration varchar(255),
   destin varchar(255)
 );
-
+insert into destin values(default,'ffff0','ddgggr');
+insert into destin values(default,'kaka','ddgggr');
 CREATE TABLE prediction (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   photo varchar(255),
