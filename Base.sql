@@ -10,12 +10,13 @@ CREATE TABLE utilisateur (
   nom varchar(200) DEFAULT NULL,
   idsexe int DEFAULT 3,
   datedenaissance date default NULL,
-  googleid varchar(30) default NULL
+  googleid varchar(30) default NULL,
+  photoprofil varchar(100) DEFAULT NULL
 );
 insert into sexe values(default,'Feminin');
 insert into sexe values(default,'Masculin');
 insert into sexe values(default,'Inconnu');
-insert into utilisateur values(default,'miora.ratsiresy@gmail.com',sha1('miora'),'Ratsiresy Miora Fanantenana',default,default,default);
+insert into utilisateur values(default,'miora.ratsiresy@gmail.com',sha1('miora'),'Ratsiresy Miora Fanantenana',default,default,default,default);
 
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
@@ -81,6 +82,15 @@ CREATE TABLE revedescription (
   mode int
 );
 
+CREATE TABLE revedescriptionimage (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idrevedescription int,
+  idimageendroit int
+);
+ALTER TABLE revedescriptionimage ADD FOREIGN KEY(idrevedescription) REFERENCES revedescription(id);
+ALTER TABLE revedescriptionimage ADD FOREIGN KEY(idimageendroit) REFERENCES imageendroit(id);
+
+
 ALTER TABLE revedescription ADD FOREIGN KEY(idreve) REFERENCES reve(id);
 ALTER TABLE revedescription ADD FOREIGN KEY(idendroit) REFERENCES endroit(id);
 
@@ -115,6 +125,14 @@ CREATE TABLE prediction (
   idtypereve int
 );
 ALTER TABLE prediction ADD FOREIGN KEY(idtypereve) REFERENCES typereve(id);
+
+CREATE TABLE predictionreve (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idreve int,
+  idprediction int
+);
+ALTER TABLE predictionreve ADD FOREIGN KEY(idreve) REFERENCES reve(id);
+ALTER TABLE predictionreve ADD FOREIGN KEY(idprediction) REFERENCES prediction(id);
 
 CREATE TABLE evaluationprediction (
   id INT PRIMARY KEY AUTO_INCREMENT, 
