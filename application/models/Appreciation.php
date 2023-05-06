@@ -37,7 +37,7 @@ class Appreciation extends CI_Model
     }
     public function listerappreciation()
     {
-        $requete = "SELECT * FROM appreciation";
+        $requete = "SELECT * FROM appreciation ORDER BY RAND() LIMIT 5";
         $requete = $this->db->query($requete);
         return $requete->result_array();
     }
