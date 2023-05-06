@@ -20,12 +20,16 @@
 
     <!-- Decouverte -->
     <?php include 'components/decouverte.php'; ?>
-    <!-- Decouverte -->
+    <!-- Service -->
     <?php include 'components/service.php'; ?>
+    <!-- Galerie -->
+    <?php include 'components/galery.php'; ?>
+    <!-- Team -->
+    <?php include 'components/team.php'; ?>
     <!-- Hero Section End -->
 
     <!-- Latest Blog Section Begin -->
-    <?php include 'components/blog.php'; ?>
+    <!-- <?php include 'components/blog.php'; ?> -->
     <!-- Latest Blog Section End -->
 
     <!-- Footer Section Begin -->

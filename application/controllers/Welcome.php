@@ -24,8 +24,48 @@ class Welcome extends CI_Controller
 		$this->load->helper('url');
 		$this->load->library('session');
 	}
-	public function index() {	
-		$this->load->view('pages/login');
+	public function index(){
+		$this->load->view('index');
+	}
+	public function connecter() {
+		require_once 'assets/google-api-php-client--PHP8.0/vendor/autoload.php';
+
+		$client = new Google_Client();
+		$client->setClientId('1002772112015-tb8hjgpfl1mbga023tcj7nq2hmlmlsu7.apps.googleusercontent.com');
+		$client->setClientSecret('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');
+		$client->setRedirectUri('https://test-production-4020.up.railway.app/');
+		$client->addScope('email');
+		$client->addScope('profile');
+
+		if(isset($_GET['code'])) {
+		    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+		    if(!isset($token['error'])) {
+		        $client->setAccessToken($token['access_token']);
+
+		        $google_oauth = new Google_Service_Oauth2($client);
+		        $google_account_info = $google_oauth->userinfo->get();
+
+		        $data = array(
+		            'email' => $google_account_info->email,
+		            'picture' => $google_account_info->picture,
+		            'name' => $google_account_info->name,
+		            'id' => $google_account_info->id
+		        );
+		        $this->session->set_userdata('google_auth', $data);
+                $user = new Utilisateur;
+                $idgoogle=$user->verifiergoogleid($data['id']);
+                if($idgoogle!=null){
+                    $_SESSION['id']=$idgoogle;
+                }
+                else{
+                    $user->setemail($data['email']);
+                    $user->setmdp();
+                }
+		        var_dump($data);
+		    }
+		}
+		$data['client'] = $client;	
+		$this->load->view('pages/login',$data);
 	}
 	public function accueil() {	
 		$this->load->view('test');

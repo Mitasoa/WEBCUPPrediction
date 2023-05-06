@@ -29,7 +29,8 @@
                 <input class="form__input" type="text" placeholder="Email" name="email">
                 <input class="form__input" type="password" placeholder="Password" name="mdp">
                 <button type="submit" style="background-color: #4B70E2;" class="btn-google">SIGN UP</button>
-                    <img src="<?php echo site_url('assets/img/google.png'); ?>" alt="Google Icon"> <a href="<?php echo base_url('UtilisateurController/connexionviagoogle');?>">Se connecter avec Google</a>
+                <a href="<?php echo $client->createAuthUrl(); ?>" class="btn-google">
+                    <img src="<?php echo site_url('assets/img/google.png'); ?>"  alt="Google Icon"> Se connecter avec Google
                 </a>
 
             </form>
@@ -168,7 +169,7 @@
                 <input class="form__input" type="text" placeholder="Email" name="email">
                 <input class="form__input" type="password" placeholder="Password" name="mdp">
                 <button style="background-color: #4B70E2;" class="btn-google">SIGN IN</button>
-                <a class="btn-google">
+                <a href="<?php echo $client->createAuthUrl(); ?>" class="btn-google">
                     <img src="<?php echo site_url('assets/img/google.png'); ?>"  alt="Google Icon"> Se connecter avec Google
                 </a>
                 <!-- <a class="form__link">Forgot your password?</a> -->
