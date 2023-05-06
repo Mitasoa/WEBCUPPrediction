@@ -34,10 +34,10 @@ class AdminController extends CI_Controller
             $user->setmdp($_POST['mdp']);
 
             $user->insererAdmin();
-            redirect(base_url('IA-Connexion'));
+            redirect(base_url('Welcome/index'));
 
         } else {
-            //redirection vers page avec erreur
+            redirect(base_url('Welcome/index?error=ok'));
         }
     }
     public function traitementloginAdministrateur()
@@ -47,12 +47,12 @@ class AdminController extends CI_Controller
             $id = $this->Admin->traitementLoginAdmin($_POST['email'], $_POST['mdp']);
             if ($id != null) {
                 $_SESSION['id'] = $id;
-                // redirect(base_url('IA-News'));
+                redirect(base_url('Welcome/accueil'));
             } else {
-                redirect(base_url('UtilisateurController/index?error=1'));
+                redirect(base_url('Welcome/index?error=ok'));
             }
         } else {
-            redirect(base_url('Welcome/indexAppro?error=ok'));
+            redirect(base_url('Welcome/index?error=ok'));
         }
     }
 }

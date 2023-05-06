@@ -8,10 +8,14 @@ CREATE TABLE utilisateur (
   email varchar(200) NOT NULL,
   mdp varchar(100) NOT NULL, 
   nom varchar(200) DEFAULT NULL,
-  idsexe int DEFAULT 0,
+  idsexe int DEFAULT 3,
   datedenaissance date default NULL,
   googleid varchar(30) default NULL
 );
+insert into sexe values(default,'Feminin');
+insert into sexe values(default,'Masculin');
+insert into sexe values(default,'Inconnu');
+insert into utilisateur values(default,'miora.ratsiresy@gmail.com',sha1('miora'),'Ratsiresy Miora Fanantenana',default,default,default);
 
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
@@ -20,6 +24,7 @@ CREATE TABLE admin (
   email varchar(200) NOT NULL,
   mdp varchar(100) NOT NULL
 );
+insert into admin values (default,'miora.ratsiresy@gmail.com',sha1('miora'));
 
 CREATE TABLE typereve (
   id INT PRIMARY KEY AUTO_INCREMENT, 

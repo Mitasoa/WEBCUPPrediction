@@ -25,10 +25,10 @@ class Welcome extends CI_Controller
 		$this->load->library('session');
 	}
 	public function index() {	
-		$this->load->helper('html');
-		$this->load->model('Index');
-		$data['Contenu'] = $this->Index->getContenu();
-		$this->load->view('index',$data);
+		$this->load->view('pages/login');
+	}
+	public function accueil() {	
+		$this->load->view('test');
 	}
 
 	public function details($slug){

@@ -42,10 +42,10 @@ class UtilisateurController extends CI_Controller
             }
 
             $user->insererUtilisateur();
-            redirect(base_url('IA-Connexion'));
+            redirect(base_url('Welcome/index'));
 
         } else {
-            //redirection vers page avec erreur
+            redirect(base_url('Welcome/index?error=1'));
         }
     }
     public function traitementlogin()
@@ -55,12 +55,12 @@ class UtilisateurController extends CI_Controller
             $id = $this->Utilisateur->traitementLogin($_POST['email'], $_POST['mdp']);
             if ($id != null) {
                 $_SESSION['id'] = $id;
-                // redirect(base_url('IA-News'));
+                redirect(base_url('Welcome/accueil'));
             } else {
-                redirect(base_url('UtilisateurController/index?error=1'));
+                redirect(base_url('Welcome/index?error=1'));
             }
         } else {
-            redirect(base_url('Welcome/indexAppro?error=ok'));
+            redirect(base_url('Welcome/index?error=ok'));
         }
     }
     public function connexionviagoogle() {	
@@ -69,7 +69,7 @@ class UtilisateurController extends CI_Controller
 		$client = new Google_Client();
 		$client->setClientId('1002772112015-tb8hjgpfl1mbga023tcj7nq2hmlmlsu7.apps.googleusercontent.com');
 		$client->setClientSecret('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');
-		$client->setRedirectUri('https://test-production-4020.up.railway.app/');
+		$client->setRedirectUri(base_url('Welcome/accueil'));
 		$client->addScope('email');
 		$client->addScope('profile');
 
@@ -101,7 +101,7 @@ class UtilisateurController extends CI_Controller
 		    }
 		}
 		$data['client'] = $client;
-		$this->load->view('pages/login',$data);
+        redirect(base_url('Welcome/index'));
 	}
 
 }

@@ -77,7 +77,7 @@ class Utilisateur extends CI_Model
     }
     public function traitementLogin($log, $mdp)
     {
-        $requete = "SELECT * FROM utilisateur WHERE email = '%s' AND motdepasse = sha1('%s')";
+        $requete = "SELECT * FROM utilisateur WHERE email = '%s' AND mdp = sha1('%s')";
         $requete = sprintf($requete, $log, $mdp);
         $requete = $this->db->query($requete);
         $requete = $requete->result_array();
@@ -95,7 +95,7 @@ class Utilisateur extends CI_Model
         $requete = "SELECT * FROM utilisateur WHERE googleid='%s'";
         $requete = sprintf($requete, $id);
         $requete = $this->db->query($requete);
-        return $requete->result_array();
+        $requete = $requete->result_array();
         $verif = 0;
         foreach ($requete as $key) {
             $verif = $key['id'];
@@ -108,14 +108,14 @@ class Utilisateur extends CI_Model
     public function insererUtilisateur()
     {
         if ($this->getnom() == '') {
-            if ($this->getgoogleid() = '') {
-                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,default,default)";
+            if ($this->getgoogleid() == '') {
+                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,default)";
 
             } else {
-                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,default,".$this->db->escape($this->getgoogleid()).")";
+                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,".$this->db->escape($this->getgoogleid()).")";
             }
         } else {
-            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . ")," . $this->db->escape($this->getnom()) . "," . $this->db->escape($this->getprenoms()) . "," . $this->db->escape($this->getidsexe()) . "," . $this->db->escape($this->getdatedenaissance()) . ",default)";
+            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . ")," . $this->db->escape($this->getnom()) . "  " . $this->db->escape($this->getprenoms()) . "," . $this->db->escape($this->getidsexe()) . "," . $this->db->escape($this->getdatedenaissance()) . ",default)";
         }
         $this->db->query($sql);
     }
