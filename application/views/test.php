@@ -23,8 +23,11 @@
         if (this.readyState == 4 && this.status == 200) {
           console.log('Transcription :', this.responseText);
         }
+        else{
+          console.log(this.responseText);
+        }
       };
-      xhr.open('POST', <?php echo base_url('Enregistrement/transcrire_audio')?>);
+      xhr.open('POST', '<?php echo base_url('Enregistrement/transcrire_audio');?>');
       xhr.send(formData);
     });
 
