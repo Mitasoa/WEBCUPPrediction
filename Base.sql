@@ -49,6 +49,12 @@ CREATE TABLE appreciation (
   etoile int,
   commentaire varchar(255) 
 );
+insert into appreciation values (default,4,'Cool');
+insert into appreciation values (default,1,'Trop top');
+insert into appreciation values (default,1,'Pas mal');
+insert into appreciation values (default,4,'Tres top');
+insert into appreciation values (default,5,'Trop top');
+insert into appreciation values (default,0,'Null');
 
 CREATE TABLE sentiment (
   id INT PRIMARY KEY AUTO_INCREMENT, 
