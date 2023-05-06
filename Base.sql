@@ -1,82 +1,102 @@
-CREATE DATABASE ia;
-
-\c ia;
-
-CREATE TABLE Type(
-	id SERIAL PRIMARY KEY,
-	type varchar(50),
-	description TEXT
+CREATE TABLE sexe (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  sexe varchar(50) NOT NULL
 );
 
-CREATE TABLE Contenu(
-	id SERIAL PRIMARY KEY,
-	introduction TEXT,
-	titre varchar(80),
-	explication TEXT,
-	conclusion TEXT,
-	image varchar(50),
-	slug varchar(50),
-	idType int REFERENCES Type(id),
-	article TEXT,
-	date DATE DEFAULT CURRENT_DATE
+CREATE TABLE utilisateur (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  email varchar(200) NOT NULL,
+  mdp varchar(100) NOT NULL, 
+  nom varchar(100) DEFAULT NULL,
+  prenoms varchar(200) DEFAULT NULL,
+  idsexe int DEFAULT 0,
+  datedenaissance date
+);
+ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
+
+CREATE TABLE typereve (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  type varchar(50) NOT NULL
 );
 
-CREATE TABLE MotCle(
-	id SERIAL PRIMARY KEY,
-	idContenu int REFERENCES Contenu(id),
-	motCle varchar(50)
+CREATE TABLE endroit (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  endroit varchar(50) NOT NULL
 );
 
-CREATE SEQUENCE photo;
-CREATE SEQUENCE id START WITH 6;
+CREATE TABLE imageendroit (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idendroit int,
+  image varchar(255),
+  description varchar(255)
+);
+ALTER TABLE imageendroit ADD FOREIGN KEY(idendroit) REFERENCES endroit(id);
 
--- Insertion dans la table "Type"
-INSERT INTO Type (type, description)
-VALUES
-('Nouvelles', 'Dernieres nouvelles sur l IA.'),
-('Technologie', 'Decouvrez les dernieres avancees technologiques en IA.'),
-('Applications', 'Decouvrez comment l IA est utilisee dans differents domaines.');
+CREATE TABLE appreciation (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  etoile int,
+  commentaire varchar(255) 
+);
 
--- Contenu 1
-INSERT INTO Contenu (introduction, titre, explication, conclusion, image, slug, idType, article)
-VALUES
-('Decouvrez les dernieres avancees en matiere d IA dans le domaine de la sante.', 'L IA en medecine : les nouvelles perspectives', 'L intelligence artificielle est de plus en plus utilisee en medecine pour aider à diagnostiquer les maladies et ameliorer les traitements. Dans cet article, nous allons explorer certaines des applications les plus recentes de l IA en medecine.', 'En conclusion, l IA est en train de revolutionner le domaine de la sante, mais il est important de l utiliser de maniere ethique et responsable.', 'image1.jpg', 'ia-en-medecine-les-nouvelles-perspectives', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis justo sed lectus congue consequat. Duis nec turpis sit amet augue pharetra ullamcorper. Suspendisse potenti. ');
+CREATE TABLE typereve (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  type varchar(50) NOT NULL
+);
 
--- Contenu 2
-INSERT INTO Contenu (introduction, titre, explication, conclusion, image, slug, idType, article)
-VALUES
-('Decouvrez comment l IA peut aider à prevenir les catastrophes naturelles.', 'L IA au service de la prevention des catastrophes', 'Les catastrophes naturelles peuvent avoir des consequences devastatrices, mais l IA peut aider à les prevenir ou à en minimiser les effets. Dans cet article, nous allons explorer certaines des facons dont l IA peut être utilisee pour proteger les populations et les infrastructures.', 'En conclusion, l IA est un outil precieux dans la prevention des catastrophes naturelles, mais il est important de travailler en collaboration avec les experts du domaine.', 'image2.jpg', 'ia-au-service-de-la-prevention-des-catastrophes', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis justo sed lectus congue consequat. Duis nec turpis sit amet augue pharetra ullamcorper. Suspendisse potenti. ');
+CREATE TABLE sentiment (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  sentiment varchar(50) NOT NULL,
+  emoji varchar(255)
+);
 
--- Contenu 3
-INSERT INTO Contenu (introduction, titre, explication, conclusion, image, slug, idType, article)
-VALUES
-('Decouvrez comment l IA est en train de changer le monde du travail.', 'L impact de l IA sur le monde du travail', 'L IA est en train de transformer le monde du travail en automatisant de nombreuses tâches et en creant de nouveaux emplois. Dans cet article, nous allons explorer certaines des facons dont l IA est en train de changer le monde du travail.', 'En conclusion, l IA est un outil puissant pour ameliorer l efficacite et la productivite dans de nombreux secteurs, mais il est important de s adapter aux changements et de se former aux competences necessaires pour les emplois du futur.', 'image3.jpg', 'impact-de-l-ia-sur-le-monde-du-travail', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis justo sed lectus congue consequat. Duis nec turpis sit amet augue pharetra ullamcorper. Suspendisse potenti. ');
+CREATE TABLE reve (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idutilisateur int,
+  date date,
+  idtype int
+);
+ALTER TABLE reve ADD FOREIGN KEY(idutilisateur) REFERENCES utilisateur(id);
+ALTER TABLE reve ADD FOREIGN KEY(idtype) REFERENCES typereve(id);
 
-INSERT INTO Contenu (introduction, titre, explication, conclusion, image, slug, idType, article) 
-VALUES 
-('La reconnaissance vocale est une technologie en pleine evolution, permettant aux machines de comprendre et interpreter la parole humaine. Dans cet article, nous allons explorer les avancees recentes dans ce domaine.', 'La reconnaissance vocale : les dernières avancees', 'Les chercheurs ont recemment developpe des modèles de reconnaissance vocale bases sur l IA qui sont plus precis que jamais auparavant. Ils utilisent des reseaux de neurones profonds pour apprendre à reconnaître les subtilites de la parole humaine.', 'La reconnaissance vocale est de plus en plus utilisee dans les applications de l IA, telles que les assistants personnels et les voitures autonomes. Les progrès dans ce domaine ouvrent de nouvelles perspectives pour les technologies de communication et de comprehension humaines.', 'reconnaissance_vocale.jpg', 'reconnaissance-vocale-dernieres-avancees', 1, 'La reconnaissance vocale est une technologie prometteuse qui offre de nombreuses possibilites pour l avenir.');
+CREATE TABLE revedescription (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idreve int,
+  idendroit int,
+  actions varchar(255),
+  objetimportant varchar(255),
+  mode int
+);
+ALTER TABLE revedescription ADD FOREIGN KEY(idreve) REFERENCES reve(id);
+ALTER TABLE revedescription ADD FOREIGN KEY(idendroit) REFERENCES endroit(id);
 
+CREATE TABLE reveemotion (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idrevedescription int,
+  idsentiment int
+);
+ALTER TABLE reveemotion ADD FOREIGN KEY(idrevedescription) REFERENCES revedescription(id);
+ALTER TABLE reveemotion ADD FOREIGN KEY(idsentiment) REFERENCES sentiment(id);
 
--- Insertion dans la table "MotCle"
-INSERT INTO MotCle (idContenu, motCle)
-VALUES
-(1, 'IA'),
-(1, 'Avantages'),
-(1, 'Inconvenients'),
-(2, 'Cybersecurite'),
-(2, 'Prevention'),
-(2, 'Preparation'),
-(3, 'Site web'),
-(3, 'Planification'),
-(3, 'Details');
-INSERT INTO MotCle (idContenu, motCle) VALUES (4, 'reconnaissance vocale');
-INSERT INTO MotCle (idContenu, motCle) VALUES (4, 'IA');
-INSERT INTO MotCle (idContenu, motCle) VALUES (4, 'réseaux de neurones');
+CREATE TABLE revepersonne (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idrevedescription int,
+  idsexe int,
+  nombre int
+);
+ALTER TABLE revepersonne ADD FOREIGN KEY(idrevedescription) REFERENCES revedescription(id);
+ALTER TABLE revepersonne ADD FOREIGN KEY(idsexe) REFERENCES sexe(id);
 
+CREATE TABLE destin (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  photoillustration varchar(255),
+  destin varchar(255)
+);
 
-CREATE OR REPLACE VIEW V_Contenu AS
-SELECT Contenu.*,Type.type,MotCle.motCle FROM Contenu 
-JOIN Type
-ON Contenu.idType = Type.id
-LEFT JOIN MotCle
-ON Contenu.id = MotCle.idContenu;
+CREATE TABLE prediction (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  photo varchar(255),
+  prediction varchar(255),
+  idtypereve int
+);
+ALTER TABLE prediction ADD FOREIGN KEY(idtypereve) REFERENCES typereve(id);
+
