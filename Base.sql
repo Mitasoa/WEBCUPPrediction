@@ -68,6 +68,7 @@ CREATE TABLE reve (
   date date,
   idtype int
 );
+
 ALTER TABLE reve ADD FOREIGN KEY(idutilisateur) REFERENCES utilisateur(id);
 ALTER TABLE reve ADD FOREIGN KEY(idtype) REFERENCES typereve(id);
 
@@ -79,6 +80,7 @@ CREATE TABLE revedescription (
   objetimportant varchar(255),
   mode int
 );
+
 ALTER TABLE revedescription ADD FOREIGN KEY(idreve) REFERENCES reve(id);
 ALTER TABLE revedescription ADD FOREIGN KEY(idendroit) REFERENCES endroit(id);
 
@@ -124,3 +126,28 @@ CREATE TABLE evaluationprediction (
 ALTER TABLE evaluationprediction ADD FOREIGN KEY(idreve) REFERENCES reve(id);
 
 
+--
+create view listereve as select reve.*,typereve.type from reve join typereve on typereve.id=reve.idtype;
+
+
+
+CREATE VIEW listerevedescription AS
+SELECT 
+  rd.id, 
+  rd.idreve, 
+  rd.idendroit,
+  endroit.endroit,
+  rd.actions, 
+  rd.objetimportant, 
+  rd.mode, 
+  GROUP_CONCAT(DISTINCT se.sentiment SEPARATOR ', ') AS sentiments,
+  SUM(CASE WHEN rp.idsexe = 1 THEN rp.nombre ELSE 0 END) AS nb_hommes,
+  SUM(CASE WHEN rp.idsexe = 2 THEN rp.nombre ELSE 0 END) AS nb_femmes
+FROM 
+  revedescription rd 
+  LEFT JOIN reveemotion re ON rd.id = re.idrevedescription 
+  LEFT JOIN sentiment se ON re.idsentiment = se.id 
+  LEFT JOIN revepersonne rp ON rd.id = rp.idrevedescription
+  join endroit on endroit.id=rd.idendroit
+GROUP BY 
+  rd.id;
