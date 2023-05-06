@@ -1,0 +1,96 @@
+
+#di-h1, #di-h2,#di-h3 {
+  font-size:30px;
+  text-transform: uppercase;
+  
+  font-family: "Baloo Paaji", cursive;
+}
+#di-h1 span, #di-h2 span,#di-h3 span {
+  width: 100%;
+  float: left;
+  color: #57a4ec;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  transform: translateZ(-50px);
+  opacity: 0;
+  animation-name: titleAnimation;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  /* animation-iteration-count: infinite ; */
+
+}
+
+#di-h1 span {
+  animation-delay: 1.6s;
+  -webkit-animation-fill-mode: forwards;
+
+}
+#di-h1 span:first-child {
+  animation-delay: 1.7s;
+}
+#di-h1 span:last-child {
+  color: #8a0925;
+  animation-delay: 1.5s;
+}
+
+#di-h2 {
+  top: 130px;
+  left: 20px;
+  position: absolute;
+}
+#di-h2 span {
+  animation-delay: 4.1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#di-h2 span:first-child {
+  animation-delay: 4.2s;
+}
+#di-h2 span:last-child {
+  color: #ff2121;
+  animation-delay: 4s;
+  animation-iteration-count: infinite ;
+
+}
+
+#di-h3 {
+  top: 130px;
+  left: 20px;
+  position: absolute;
+}
+#di-h3 span {
+  animation-delay: 8.1s;
+  -webkit-animation-fill-mode: forwards;
+}
+#di-h3 span:first-child {
+  animation-delay: 7.3s;
+}
+#di-h3 span:last-child {
+  color: #ff2121;
+  animation-delay:8s;
+}
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+    clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+  }
+}
