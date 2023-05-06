@@ -35,7 +35,7 @@ class Enregistrement extends REST_Controller {
         $headers = [
             'Content-Type: application/json'
         ];
-        $api_key = 'YOUR_API_KEY_HERE'; // Remplacer avec votre clé API Google Speech-to-Text
+        $api_key = 'AIzaSyCdDycio8lPCUAgeiWie3-kBvrorZOGXv4'; // Remplacer avec votre clé API Google Speech-to-Text
 
         // Envoyer la requête à l'API Google Speech-to-Text
         $url = 'https://speech.googleapis.com/v1/speech:recognize?key=' . $api_key;
