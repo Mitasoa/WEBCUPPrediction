@@ -73,14 +73,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'port'	=> '3306',
+// 	'hostname' => 'run1.hodi.host',
+// 	'username' => 'aleateam_dbtest',
+// 	'password' => 'db:test@1234',
+// 	'database' => 'aleateam_iadatabase',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'port'   => 5432,
 	'hostname' => 'localhost',
-	'username' => 'postgres',
-	'password' => '3306Celestin',
-	'database' => 'ia',
-	'dbdriver' => 'postgre',
+	'username' => '',
+	'password' => 'root',
+	'database' => 'alea',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

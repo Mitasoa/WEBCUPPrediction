@@ -1,9 +1,9 @@
 <?php 
 
-    class Sexe extends CI_Model
+    class TypeReve extends CI_Model
     {
         private $id;
-        private $sexe;
+        private $type;
     
         public function setid($id){
             $this->id = $id;
@@ -11,15 +11,12 @@
         public function getid(){
             return $this->id;
         }
-        public function setsexe($sexe){
-            $this->sexe = $sexe;
+        public function settype($type){
+            $this->type = $type;
         }
-        public function getsexe(){
-            return $this->sexe;
-        }
-
+        
         public function liste(){
-            $requete="select * from Sexe";
+            $requete="select * from typereve";
             $query=$this->db->query($requete);
             return $query->result_array();
         }

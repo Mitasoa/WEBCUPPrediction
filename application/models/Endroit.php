@@ -1,9 +1,9 @@
 <?php 
 
-    class Sexe extends CI_Model
+    class Endroit extends CI_Model
     {
         private $id;
-        private $sexe;
+        private $endroit;
     
         public function setid($id){
             $this->id = $id;
@@ -11,15 +11,12 @@
         public function getid(){
             return $this->id;
         }
-        public function setsexe($sexe){
-            $this->sexe = $sexe;
+        public function setendroit($endroit){
+            $this->endroit = $endroit;
         }
-        public function getsexe(){
-            return $this->sexe;
-        }
-
+        
         public function liste(){
-            $requete="select * from Sexe";
+            $requete="select * from endroit";
             $query=$this->db->query($requete);
             return $query->result_array();
         }

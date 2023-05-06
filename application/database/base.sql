@@ -38,11 +38,6 @@ CREATE TABLE appreciation (
   commentaire varchar(255) 
 );
 
-CREATE TABLE typereve (
-  id INT PRIMARY KEY AUTO_INCREMENT, 
-  type varchar(50) NOT NULL
-);
-
 CREATE TABLE sentiment (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   sentiment varchar(50) NOT NULL,
