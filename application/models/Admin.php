@@ -3,7 +3,7 @@
     class Admin extends CI_Model
     {
         private $id;
-        private $login;
+        private $email;
         private $mdp; 
     
         public function setid($idlogin){
@@ -12,11 +12,11 @@
         public function getid(){
             return $this->id;
         }
-        public function setlogin($idlogin){
-            $this->login = $idlogin;
+        public function setemail($idemail){
+            $this->email = $idemail;
         }
-        public function getlogin(){
-            return $this->login;
+        public function getemail(){
+            return $this->email;
         }
         public function setmdp($idlogin){
             $this->mdp = $idlogin;
@@ -24,26 +24,25 @@
         public function getmdp(){
             return $this->mdp;
         }
-        public function verifylogin($login){
-            $requete="select * from Admin where login='".$login."'";
-            $query=$this->db->query($requete);
-            return $query->result_array();
-
+        public function traitementLoginAdmin($log, $mdp)
+    {
+        $requete = "SELECT * FROM admin WHERE email = '%s' AND mdp = sha1('%s')";
+        $requete = sprintf($requete, $log, $mdp);
+        $requete = $this->db->query($requete);
+        $requete = $requete->result_array();
+        $verif = 0;
+        foreach ($requete as $key) {
+            $verif = $key['id'];
         }
-        public function verifymdp($mdpactu,$mdp){
-            $requete="select crypt('".$mdp."','".$mdpactu."')";
-            $query=$this->db->query($requete);
-            $query=$query->result_array();
-            $crypt="";
-            foreach($query as $query){
-                $crypt=$query['crypt'];
-            }
-            return $crypt;
-
+        if ($verif == 0) {
+            return null;
         }
-        public function inscriptionadmin($name,$code){
-            $sql = "INSERT INTO Admin(login,mdp) values ('".$name."',crypt('".$code."',gen_salt('bf')))";
-            $this->db->query($sql);
-        }
+        return $verif;
+    }
+    public function insererAdmin()
+    {
+        $sql = "INSERT INTO admin values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "))";
+        $this->db->query($sql);
+    }
     }
 ?>
