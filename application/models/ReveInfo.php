@@ -14,5 +14,12 @@ class ReveInfo extends CI_Model
         $requete = $this->db->query($requete);
         return $requete->result_array();
     }
+
+    public function listepredictionreve($id){
+
+        $requete = "SELECT * FROM listepredictionreve where idprediction=".$id;
+        $requete = $this->db->query($requete);
+        return $requete->result_array();
+    }
 }
 ?>

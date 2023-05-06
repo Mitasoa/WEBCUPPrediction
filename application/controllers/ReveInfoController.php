@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class ReveController extends CI_Controller
+class ReveInfoController extends CI_Controller
 {
 
     /**
@@ -31,6 +31,17 @@ class ReveController extends CI_Controller
         } else {
             $this->load->model('Reveinfo');
             $reve ['reve']= $this->Reveinfo->listereve($_SESSION['id']);
+            $this->load->view('pages/reve',$reve);
+
+        }
+    }
+    public function predictionreve()
+    {
+        if (!isset($_SESSION['id'])) {
+            redirect(base_url('Welcome/index'));
+        } else {
+            $this->load->model('Reveinfo');
+            $reve ['prediction']= $this->Reveinfo->listepredictionreve($_GET['id']);
             $this->load->view('pages/reve',$reve);
 
         }
