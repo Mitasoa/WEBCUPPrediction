@@ -14,6 +14,12 @@ CREATE TABLE utilisateur (
 );
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
+CREATE TABLE admin (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  email varchar(200) NOT NULL,
+  mdp varchar(100) NOT NULL
+);
+
 CREATE TABLE typereve (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   type varchar(50) NOT NULL
