@@ -99,7 +99,7 @@ CREATE TABLE destin (
   destin varchar(255)
 );
 insert into destin values(default,'ffff0','ddgggr');
-insert into destin values(default,'kaka','ddgggr');
+insert into destin values(default,'kaka','ffff');
 CREATE TABLE prediction (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   photo varchar(255),
@@ -107,4 +107,14 @@ CREATE TABLE prediction (
   idtypereve int
 );
 ALTER TABLE prediction ADD FOREIGN KEY(idtypereve) REFERENCES typereve(id);
+
+CREATE TABLE evaluationprediction (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idreve int,
+  etoile int,
+  commentaire text
+);
+
+ALTER TABLE evaluationprediction ADD FOREIGN KEY(idreve) REFERENCES reve(id);
+
 
