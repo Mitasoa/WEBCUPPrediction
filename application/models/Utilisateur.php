@@ -90,6 +90,21 @@ class Utilisateur extends CI_Model
         }
         return $verif;
     }
+    public function verifiergoogleid($id)
+    {
+        $requete = "SELECT * FROM utilisateur WHERE googleid='%s'";
+        $requete = sprintf($requete, $id);
+        $requete = $this->db->query($requete);
+        return $requete->result_array();
+        $verif = 0;
+        foreach ($requete as $key) {
+            $verif = $key['id'];
+        }
+        if ($verif == 0) {
+            return null;
+        }
+        return $verif;
+    }
     public function insererUtilisateur()
     {
         if ($this->getnom() == '') {

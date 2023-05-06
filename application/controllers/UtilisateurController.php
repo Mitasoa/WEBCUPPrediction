@@ -88,65 +88,20 @@ class UtilisateurController extends CI_Controller
 		            'id' => $google_account_info->id
 		        );
 		        $this->session->set_userdata('google_auth', $data);
+                $user = new Utilisateur;
+                $idgoogle=$user->verifiergoogleid($data['id']);
+                if($idgoogle!=null){
+                    $_SESSION['id']=$idgoogle;
+                }
+                else{
+                    $user->setemail($data['email']);
+                    $user->setmdp();
+                }
 		        var_dump($data);
 		    }
 		}
 		$data['client'] = $client;
 		$this->load->view('pages/login',$data);
 	}
-// public function ajoutArticle()
-// {
-// 	if (isset($_SESSION['idAdministrator'])) {
-// 	$idtypeactualite=$_POST['typeactualite'];
-// 	$grandtitre=$_POST['grandtitre'];
-// 	$descriptionactualite=$_POST['description'];
-// 	if(isset($_POST['datedebut'])){
-// 		$datedebut=$_POST['datedebut'];
-// 	}
-// 	else{
-// 		$datedebut=null;
-// 	}
-// 	if(isset($_POST['datefin'])){
-// 		$datefin=$_POST['datefin'];
-// 	}
-// 	else{
-// 		$datefin=null;
-// 	}
-// 	if(isset($_POST['lieuevenement'])){
-// 		$lieuevenement=$_POST['lieuevenement'];
-// 	}
-// 	else{
-// 		$lieuevenement=null;
-// 	}
-// 	date_default_timezone_set('America/New_York');
-// 	$namephoto="photo-".date("d-m-Y-H-i-s");
-// 	//config updload
-// 	$config['upload_path'] = './assets/img/upload/';
-// 	echo $config['upload_path'];
-// 	$config['allowed_types'] = 'jpeg|jpg|png|JPG|PNG';
-// 	$config['max_size'] = 20000;
-// 	$config['max_width'] = 7000;
-// 	$config['max_height'] = 7000;
-// 	$config['file_name'] = $namephoto;
-
-// 	$this->load->library('upload', $config);
-// 	$this->upload->initialize($config);
-
-// 	if (!$this->upload->do_upload('photo')) {
-// 		$error = array('error' => $this->upload->display_errors());
-// 		var_dump($error);
-// 	} else {
-// 		//get extension
-// 		$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
-// 		$photoillustration=$namephoto . '.' . $ext;
-// 		$this->load->model('Actualites');
-// 		$this->Actualites->insertionActualite($idtypeactualite,$photoillustration ,$grandtitre,$descriptionactualite,$datedebut,$datefin,$lieuevenement);
-// 		redirect(base_url('IA-News'));
-// 	}
-// 	}
-// 	else{
-// 		redirect(base_url('IA-Connexion'));
-// 	}
-// }
 
 }

@@ -7,14 +7,24 @@ CREATE TABLE utilisateur (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   email varchar(200) NOT NULL,
   mdp varchar(100) NOT NULL, 
-  nom varchar(100) DEFAULT NULL,
-  prenoms varchar(200) DEFAULT NULL,
+  nom varchar(200) DEFAULT NULL,
   idsexe int DEFAULT 0,
   datedenaissance date default NULL,
   googleid varchar(30) default NULL
 );
+
 ALTER TABLE utilisateur ADD FOREIGN KEY(idsexe) REFERENCES  sexe(id);
 
+CREATE TABLE admin (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  email varchar(200) NOT NULL,
+  mdp varchar(100) NOT NULL
+);
+
+CREATE TABLE typereve (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  type varchar(50) NOT NULL
+);
 
 CREATE TABLE endroit (
   id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -33,11 +43,6 @@ CREATE TABLE appreciation (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   etoile int,
   commentaire varchar(255) 
-);
-
-CREATE TABLE typereve (
-  id INT PRIMARY KEY AUTO_INCREMENT, 
-  type varchar(50) NOT NULL
 );
 
 CREATE TABLE sentiment (
