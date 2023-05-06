@@ -14,9 +14,9 @@
     <!-- Header Section Begin -->
     <?php include 'components/navbar.php'; ?>
     <!-- Header End -->
-    <?php include 'components.php'; ?>
+    <?php include 'components/head.php'; ?>
     <!-- Hero Section Begin -->
-    
+    <?php include 'components/hero.php'; ?>
     <!-- Hero Section End -->
 
     <!-- Latest Blog Section Begin -->
