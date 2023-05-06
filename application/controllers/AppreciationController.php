@@ -26,23 +26,29 @@ class AppreciationController extends CI_Controller
     }
     public function ajouterAppreciation()
     {
-        $this->load->model('Appreciation');
-        if (!empty($_POST['etoile']) && !empty($_POST['commentaire'])) {
-            $appreciation = new Appreciation;
-
-            $appreciation->setetoile($_POST['etoile']);
-            $appreciation->setcommentaire($_POST['commentaire']);
-
-            $appreciation->insererAppreciation();
+        if (!isset($_SESSION['id'])) {
             redirect(base_url('Welcome/index'));
-
         } else {
-            redirect(base_url('Welcome/index?error=ok'));
+            $this->load->model('Appreciation');
+            if (!empty($_POST['etoile']) && !empty($_POST['commentaire'])) {
+                $appreciation = new Appreciation;
+
+                $appreciation->setetoile($_POST['etoile']);
+                $appreciation->setcommentaire($_POST['commentaire']);
+
+                $appreciation->insererAppreciation();
+                redirect(base_url('Welcome/index'));
+
+            } else {
+                redirect(base_url('Welcome/index?error=ok'));
+            }
         }
+
     }
-    public function listerappreciation(){
+    public function listerappreciation()
+    {
         $this->load->model('Appreciation');
-        $data['appreciation']=$this->Appreciation->listerappreciation();
+        $data['appreciation'] = $this->Appreciation->listerappreciation();
         $this->load->view('pages/accueil');
     }
 }

@@ -26,21 +26,25 @@ class EvaluationPredictionController extends CI_Controller
     }
     public function ajouterEvaluationPrediction()
     {
-        $this->load->model('EvaluationPrediction');
-        if (!empty($_POST['idreve']) && !empty($_POST['etoile'])) {
-            $appreciation = new EvaluationPrediction;
-
-            $appreciation->setetoile($_POST['etoile']);
-            $appreciation->setcommentaire($_POST['commentaire']);
-            if(isset($_POST['idreve'])){
-                $appreciation->setidreve($_POST['idreve']);
-
-            }
-            $appreciation->insererEvaluationPrediction();
+        if (!isset($_SESSION['id'])) {
             redirect(base_url('Welcome/index'));
-
         } else {
-            redirect(base_url('Welcome/index?error=ok'));
+            $this->load->model('EvaluationPrediction');
+            if (!empty($_POST['idreve']) && !empty($_POST['etoile'])) {
+                $appreciation = new EvaluationPrediction;
+
+                $appreciation->setetoile($_POST['etoile']);
+                $appreciation->setcommentaire($_POST['commentaire']);
+                if (isset($_POST['idreve'])) {
+                    $appreciation->setidreve($_POST['idreve']);
+
+                }
+                $appreciation->insererEvaluationPrediction();
+                redirect(base_url('Welcome/index'));
+
+            } else {
+                redirect(base_url('Welcome/index?error=ok'));
+            }
         }
     }
 }
