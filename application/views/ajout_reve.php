@@ -1,8 +1,11 @@
+<?php
+
+?>
 <html>
-    <form action="#" method="get">
+    <form action="<?php echo site_url('ReveController/ajout_reve'); ?>" method="get">
         Date: <input type="date" name="date">
         Type: 
-        <select name="type">
+        <select name="typereve">
             <?php foreach($type as $key){ ?>
             <option value="<?php echo $key['id']; ?>"><?php echo $key['type']; ?></option>
             <?php } ?>
