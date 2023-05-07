@@ -17,7 +17,7 @@
                         </ul>
                     </nav>
                     <div class="header__nav__social">
-                        <a href="#"><button class="btn btn-primary" style="background-color: #1A237E; border-color: #1A237E;">LOGIN</button></a>
+                        <a href="<?php echo site_url('Welcome/connecter'); ?>"><button class="btn btn-primary" style="background-color: #1A237E; border-color: #1A237E;">LOGIN</button></a>
                     </div>
                 </div>
             </div>

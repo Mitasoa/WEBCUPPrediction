@@ -46,7 +46,7 @@ class Welcome extends CI_Controller
 		$client = new Google_Client();
 		$client->setClientId('1002772112015-7md98bud86ahejqk3hhgsp8bcdm0mmc5.apps.googleusercontent.com');
 		$client->setClientSecret('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');
-		$client->setRedirectUri('https://aleateam.madagascar.webcup.hodi.host');
+		$client->setRedirectUri('https://aleateam.madagascar.webcup.hodi.host/WEBCUPPrediction/Welcome/connecter');
 		$client->addScope('email');
 		$client->addScope('profile');
 
@@ -65,6 +65,7 @@ class Welcome extends CI_Controller
 		            'id' => $google_account_info->id
 		        );
 		        $this->session->set_userdata('google_auth', $data);
+		        $this->load->model('Utilisateur');
                 $user = new Utilisateur;
                 $idgoogle=$user->verifiergoogleid($data['id']);
                 if($idgoogle!=null){
