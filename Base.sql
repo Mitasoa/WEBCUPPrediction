@@ -435,20 +435,25 @@ SELECT
   typereve.type AS Type_De_Reve,
   sexe.sexe AS Sexe,
   CONCAT(
-    ROUND(
-      COUNT(reve.id) / SUM(COUNT(reve.id)) OVER (PARTITION BY typereve.id) * 100,
-      2
+    COALESCE(
+      ROUND(
+        COUNT(reve.id) / SUM(COUNT(reve.id)) OVER (PARTITION BY typereve.id, sexe.id) * 100,
+        2
+      ),
+      0
     ),
     '%'
   ) AS Pourcentage
 FROM
   typereve
-  INNER JOIN reve ON typereve.id = reve.idtype
-  INNER JOIN utilisateur ON reve.idutilisateur = utilisateur.id
-  INNER JOIN sexe ON utilisateur.idsexe = sexe.id
+  CROSS JOIN sexe
+  LEFT JOIN reve ON typereve.id = reve.idtype
+  LEFT JOIN utilisateur ON reve.idutilisateur = utilisateur.id
+  AND utilisateur.idsexe = sexe.id
 GROUP BY
   typereve.id,
   sexe.id;
+
 
 
   CREATE VIEW statistique_evaluation_typereve as
