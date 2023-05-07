@@ -2,6 +2,9 @@ CREATE TABLE sexe (
   id INT PRIMARY KEY AUTO_INCREMENT,
   sexe varchar(50) NOT NULL
 );
+insert into sexe(sexe) values('Femme');
+insert into sexe(sexe) values('Homme');
+insert into sexe(sexe) values('Inconnu');
 
 CREATE TABLE utilisateur (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -455,7 +458,7 @@ GROUP BY
     typereve.id;
 
 
---- MITASOA 
+
 INSERT INTO utilisateur (email, mdp, nom, idsexe, datedenaissance, googleid)
 VALUES 
 ('johndoe@gmail.com', SHA1('secret'), 'John Doe', 1, '1990-01-01', NULL),
