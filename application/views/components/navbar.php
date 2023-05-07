@@ -10,9 +10,15 @@
                 <div class="header__nav__option">
                     <nav class="header__nav__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="<?php echo site_url('Welcome/'); ?>">Accueil</a></li>
+                            <li <?php if($active==1) { ?> class="active" <?php } ?> ><a href="<?php echo site_url('Welcome/'); ?>">Accueil</a></li>
+                            <li <?php if($active==2) { ?> class="active" <?php } ?> ><a href="<?php echo site_url('Welcome/onirix'); ?>">Onirix</a></li>
+                            <li <?php if($active==3) { ?> class="active" <?php } ?> ><a href="<?php echo site_url('Welcome/institus'); ?>">IIR</a></li>
+                            <li <?php if($active==4) { ?> class="active" <?php } ?> ><a href="<?php echo site_url('Welcome/cauchemar'); ?>">Aide</a></li>
                         </ul>
                     </nav>
+                    <div class="header__nav__social">
+                        <a href="#"><button class="btn btn-primary" style="background-color: #1A237E; border-color: #1A237E;">LOGIN</button></a>
+                    </div>
                 </div>
             </div>
         </div>

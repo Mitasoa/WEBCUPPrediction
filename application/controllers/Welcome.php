@@ -25,15 +25,28 @@ class Welcome extends CI_Controller
 		$this->load->library('session');
 	}
 	public function index(){
-		$this->load->view('index');
+		$data['active'] = 1;
+		$this->load->view('index',$data);
+	}
+	public function onirix(){
+		$data['active'] = 2;
+		$this->load->view('onirix',$data);
+	}
+	public function institus(){
+		$data['active'] = 3;
+		$this->load->view('institus',$data);
+	}
+	public function cauchemar(){
+		$data['active'] = 4;
+		$this->load->view('cauchemar',$data);
 	}
 	public function connecter() {
 		require_once 'assets/google-api-php-client--PHP8.0/vendor/autoload.php';
 
 		$client = new Google_Client();
-		$client->setClientId('1002772112015-tb8hjgpfl1mbga023tcj7nq2hmlmlsu7.apps.googleusercontent.com');
-		$client->setClientSecret('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');
-		$client->setRedirectUri('https://test-production-4020.up.railway.app/');
+		$client->setClientId('1002772112015-7md98bud86ahejqk3hhgsp8bcdm0mmc5.apps.googleusercontent.com');
+		$client->setClientSecret('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');
+		$client->setRedirectUri('https://aleateam.madagascar.webcup.hodi.host');
 		$client->addScope('email');
 		$client->addScope('profile');
 
@@ -59,7 +72,9 @@ class Welcome extends CI_Controller
                 }
                 else{
                     $user->setemail($data['email']);
-                    $user->setmdp();
+                    $user->setnom($data['name']);
+                    $user->setgoogleid($data['id']);
+                    $user->insererUtilisateur();
                 }
 		        var_dump($data);
 		    }

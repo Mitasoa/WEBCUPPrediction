@@ -8,7 +8,6 @@
                             <h2>quoi ?</h2>
                         </div>
                         <p>Prédisez votre avenir en décryptant vos rêves grâce aux services innovants d'Onirix et de l'Institut International des Rêves !</p>
-                        <a href="#" class="primary-btn">View all services</a>
                     </div>
                 </div>
                 <div class="col-lg-8">

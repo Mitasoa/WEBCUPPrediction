@@ -24,6 +24,8 @@
     <?php include 'components/service.php'; ?>
     <!-- Galerie -->
     <?php include 'components/galery.php'; ?>
+    <!-- Stars -->
+    <?php include 'components/stars.php'; ?>
     <!-- Team -->
     <?php include 'components/team.php'; ?>
     <!-- Hero Section End -->
