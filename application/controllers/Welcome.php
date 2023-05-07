@@ -30,6 +30,8 @@ class Welcome extends CI_Controller
 	}
 	public function onirix(){
 		$data['active'] = 2;
+		$this->load->model('Appreciation');
+        $data['Appreciation'] = $this->Appreciation->listerappreciation();
 		$this->load->view('onirix',$data);
 	}
 	public function institus(){
@@ -77,7 +79,6 @@ class Welcome extends CI_Controller
                     $user->setgoogleid($data['id']);
                     $user->insererUtilisateur();
                 }
-		        var_dump($data);
 		    }
 		}
 		$data['client'] = $client;	

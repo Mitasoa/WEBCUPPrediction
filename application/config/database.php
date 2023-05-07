@@ -72,14 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-
 $db['default'] = array(
 	'dsn'	=> '',
 	'port'	=> '3306',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'eval',
+	'hostname' => 'run1.hodi.host',
+	'username' => 'aleateam_dbtest',
+	'password' => 'db:test@1234',
+	'database' => 'aleateam_iadatabase',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -95,3 +94,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+

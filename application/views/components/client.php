@@ -10,91 +10,23 @@
         </div>
         <div class="row">
             <div class="testimonial__slider owl-carousel">
+                <?php foreach ($Appreciation as $liste) { ?>
                 <div class="col-lg-4">
                     <div style="background-color: #100028;" class="testimonial__item">
                         <div class="testimonial__text">
-                            <p>Delivers such a great service that it can benefit all kinds of people from any number
-                                of industries.</p>
+                            <p><?php echo $liste['commentaire']; ?></p>
                         </div>
                         <div class="testimonial__author">
                             <div class="testimonial__author__pic">
-                                <img src="<?php echo site_url('assets/img/testimonial/ta-1.jpg'); ?>" alt="">
+                                <img src="<?php echo site_url('assets/img/testimonial/4305692.png'); ?>" alt="">
                             </div>
                             <div class="testimonial__author__text">
-                                <h5>Krista Attorn</h5>
-                                <span>Web Designer</span>
+                                <h5><?php echo $liste['etoile']; ?> étoile(s)</h5> 
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div style="background-color: #100028;" class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>Videographer delivers such a great service that it can benefit all kinds of people
-                                from any number.</p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="<?php echo site_url('assets/img/testimonial/ta-2.jpg'); ?>" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Krista Attorn</h5>
-                                <span>Web Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div style="background-color: #100028;" class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>Videographer delivers such a great service that it can benefit all kinds of people
-                                from any number.</p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="<?php echo site_url('assets/img/testimonial/ta-3.jpg'); ?>" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Krista Attorn</h5>
-                                <span>Web Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div style="background-color: #100028;" class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>Delivers such a great service that it can benefit all kinds of people from any number
-                                of industries.</p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="<?php echo site_url('assets/img/testimonial/ta-1.jpg'); ?>" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Krista Attorn</h5>
-                                <span>Web Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div style="background-color: #100028;" class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>Videographer delivers such a great service that it can benefit all kinds of people
-                                from any number.</p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="<?php echo site_url('assets/img/testimonial/ta-2.jpg'); ?>" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Krista Attorn</h5>
-                                <span>Web Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
