@@ -123,7 +123,7 @@ class Utilisateur extends CI_Model
         }
         $this->db->query($sql);
     }
-    public function updateprofil($image,$id)
+    public function modifierprofil($image,$id)
     {
         $sql = "UPDATE utilisateur set photoprofil=".$this->db->escape($image)." where id=".$id;
         $this->db->query($sql);
