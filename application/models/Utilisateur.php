@@ -109,17 +109,17 @@ class Utilisateur extends CI_Model
     {
         if ($this->getnom() == '') {
             if ($this->getgoogleid() == '') {
-                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,default)";
+                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,default,default)";
 
             } else {
-                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",default,default,default,default,".$this->db->escape($this->getgoogleid()).")";
+                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",default,default,default,default,".$this->db->escape($this->getgoogleid()).",default)";
             }
         }
         else if($this->getnom() != '' && $this->getgoogleid() != '' ){
-            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",default," . $this->db->escape($this->getnom()) . ",default,default,".$this->db->escape($this->getgoogleid()).")";            
+            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",default," . $this->db->escape($this->getnom()) . ",default,default,".$this->db->escape($this->getgoogleid()).",default)";            
         }
          else {
-            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . ")," . $this->db->escape($this->getnom()) . "  " . $this->db->escape($this->getprenoms()) . "," . $this->db->escape($this->getidsexe()) . "," . $this->db->escape($this->getdatedenaissance()) . ",default)";
+            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . ")," . $this->db->escape($this->getnom()) . "  " . $this->db->escape($this->getprenoms()) . "," . $this->db->escape($this->getidsexe()) . "," . $this->db->escape($this->getdatedenaissance()) . ",default,default)";
         }
         $this->db->query($sql);
     }
