@@ -122,5 +122,10 @@ class Welcome extends CI_Controller
 		$data['Type'] = $this->Index->getType();
         $this->load->view('back_office',$data);
     }
+	public function logout()
+	{
+		session_destroy();
+		redirect(base_url('Welcome/connecter'));
+	}
 
 }
