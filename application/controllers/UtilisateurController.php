@@ -33,12 +33,11 @@ class UtilisateurController extends CI_Controller
             $user->setemail($_POST['email']);
             $user->setmdp($_POST['mdp']);
 
-            if(isset($_POST['nom']) && isset($_POST['prenoms']) && isset($_POST['idsexe']) && isset($_POST['datedenaissance']))
-            {
-            $user->setnom($_POST['nom']);
-            $user->setprenoms($_POST['prenoms']);
-            $user->setidsexe($_POST['idsexe']);
-            $user->setdatedenaissance($_POST['datedenaissance']);
+            if (isset($_POST['nom']) && isset($_POST['prenoms']) && isset($_POST['idsexe']) && isset($_POST['datedenaissance'])) {
+                $user->setnom($_POST['nom']);
+                $user->setprenoms($_POST['prenoms']);
+                $user->setidsexe($_POST['idsexe']);
+                $user->setdatedenaissance($_POST['datedenaissance']);
             }
 
             $user->insererUtilisateur();
@@ -61,6 +60,38 @@ class UtilisateurController extends CI_Controller
             }
         } else {
             redirect(base_url('Welcome/index?error=ok'));
+        }
+    }
+    public function modifierphoto()
+    {
+        if (isset($_SESSION['id'])) {
+            date_default_timezone_set('America/New_York');
+            $namephoto = "photo-" . date("d-m-Y-H-i-s");
+            //config updload
+            $config['upload_path'] = './assets/img/upload/';
+            echo $config['upload_path'];
+            $config['allowed_types'] = 'jpeg|jpg|png|JPG|PNG';
+            $config['max_size'] = 20000;
+            $config['max_width'] = 7000;
+            $config['max_height'] = 7000;
+            $config['file_name'] = $namephoto;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('photo')) {
+                $error = array('error' => $this->upload->display_errors());
+                var_dump($error);
+            } else {
+                //get extension
+                $ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+                $photoillustration = $namephoto . '.' . $ext;
+                $this->load->model('Utilisateur');
+                $this->Utilisateur->modifierprofil($photoillustration,$_SESSION['id']);
+                redirect(base_url('IA-News'));
+            }
+        } else {
+            redirect(base_url('IA-Connexion'));
         }
     }
 }
