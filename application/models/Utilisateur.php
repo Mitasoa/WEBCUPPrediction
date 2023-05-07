@@ -112,9 +112,13 @@ class Utilisateur extends CI_Model
                 $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,default)";
 
             } else {
-                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . "),default,default,default,".$this->db->escape($this->getgoogleid()).")";
+                $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",default,default,default,default,".$this->db->escape($this->getgoogleid()).")";
             }
-        } else {
+        }
+        else if($this->getnom() != '' && $this->getgoogleid() != '' ){
+            $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",default," . $this->db->escape($this->getnom()) . ",default,default,".$this->db->escape($this->getgoogleid()).")";            
+        }
+         else {
             $sql = "INSERT INTO utilisateur values (default," . $this->db->escape($this->getemail()) . ",sha1(" . $this->db->escape($this->getmdp()) . ")," . $this->db->escape($this->getnom()) . "  " . $this->db->escape($this->getprenoms()) . "," . $this->db->escape($this->getidsexe()) . "," . $this->db->escape($this->getdatedenaissance()) . ",default)";
         }
         $this->db->query($sql);

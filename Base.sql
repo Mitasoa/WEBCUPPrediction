@@ -6,7 +6,7 @@ CREATE TABLE sexe (
 CREATE TABLE utilisateur (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   email varchar(200) NOT NULL,
-  mdp varchar(100) NOT NULL, 
+  mdp varchar(100) default NULL, 
   nom varchar(200) DEFAULT NULL,
   idsexe int DEFAULT 3,
   datedenaissance date default NULL,
@@ -49,6 +49,12 @@ CREATE TABLE appreciation (
   etoile int,
   commentaire varchar(255) 
 );
+insert into appreciation values (default,4,'Cool');
+insert into appreciation values (default,1,'Trop top');
+insert into appreciation values (default,1,'Pas mal');
+insert into appreciation values (default,4,'Tres top');
+insert into appreciation values (default,5,'Trop top');
+insert into appreciation values (default,0,'Null');
 
 CREATE TABLE sentiment (
   id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -62,6 +68,7 @@ CREATE TABLE reve (
   date date,
   idtype int
 );
+
 ALTER TABLE reve ADD FOREIGN KEY(idutilisateur) REFERENCES utilisateur(id);
 ALTER TABLE reve ADD FOREIGN KEY(idtype) REFERENCES typereve(id);
 
@@ -73,6 +80,7 @@ CREATE TABLE revedescription (
   objetimportant varchar(255),
   mode int
 );
+
 ALTER TABLE revedescription ADD FOREIGN KEY(idreve) REFERENCES reve(id);
 ALTER TABLE revedescription ADD FOREIGN KEY(idendroit) REFERENCES endroit(id);
 
@@ -99,7 +107,7 @@ CREATE TABLE destin (
   destin varchar(255)
 );
 insert into destin values(default,'ffff0','ddgggr');
-insert into destin values(default,'kaka','ddgggr');
+insert into destin values(default,'kaka','ffff');
 CREATE TABLE prediction (
   id INT PRIMARY KEY AUTO_INCREMENT, 
   photo varchar(255),
@@ -108,3 +116,38 @@ CREATE TABLE prediction (
 );
 ALTER TABLE prediction ADD FOREIGN KEY(idtypereve) REFERENCES typereve(id);
 
+CREATE TABLE evaluationprediction (
+  id INT PRIMARY KEY AUTO_INCREMENT, 
+  idreve int,
+  etoile int,
+  commentaire text
+);
+
+ALTER TABLE evaluationprediction ADD FOREIGN KEY(idreve) REFERENCES reve(id);
+
+
+--
+create view listereve as select reve.*,typereve.type from reve join typereve on typereve.id=reve.idtype;
+
+
+
+CREATE VIEW listerevedescription AS
+SELECT 
+  rd.id, 
+  rd.idreve, 
+  rd.idendroit,
+  endroit.endroit,
+  rd.actions, 
+  rd.objetimportant, 
+  rd.mode, 
+  GROUP_CONCAT(DISTINCT se.sentiment SEPARATOR ', ') AS sentiments,
+  SUM(CASE WHEN rp.idsexe = 1 THEN rp.nombre ELSE 0 END) AS nb_hommes,
+  SUM(CASE WHEN rp.idsexe = 2 THEN rp.nombre ELSE 0 END) AS nb_femmes
+FROM 
+  revedescription rd 
+  LEFT JOIN reveemotion re ON rd.id = re.idrevedescription 
+  LEFT JOIN sentiment se ON re.idsentiment = se.id 
+  LEFT JOIN revepersonne rp ON rd.id = rp.idrevedescription
+  join endroit on endroit.id=rd.idendroit
+GROUP BY 
+  rd.id;
