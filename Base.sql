@@ -170,7 +170,23 @@ ALTER TABLE
 ADD
   FOREIGN KEY(idreve) REFERENCES reve(id);
 
---
+CREATE TABLE predictionreve (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	idreve int,
+	idprediction int
+);
+
+ALTER TABLE
+	predictionreve
+ADD
+	FOREIGN KEY(idreve) REFERENCES reve(id);
+
+ALTER TABLE
+	predictionreve
+ADD
+	FOREIGN KEY(idprediction) REFERENCES prediction(id);
+
+
 create view listereve as
 select
   reve.*,
