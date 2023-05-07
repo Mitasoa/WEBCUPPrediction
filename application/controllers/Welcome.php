@@ -80,6 +80,7 @@ class Welcome extends CI_Controller
                     $user->insererUtilisateur();
                 }
 		    }
+		    redirect('UsersController/profil');
 		}
 		$data['client'] = $client;	
 		$this->load->view('pages/login',$data);
