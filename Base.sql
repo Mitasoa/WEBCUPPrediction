@@ -218,7 +218,7 @@ GROUP BY
 
 --
 ALTER TABLE
-  reve
+  revedescription
 ADD
   COLUMN ordre int;
 
@@ -449,3 +449,15 @@ FROM
 GROUP BY
   typereve.id,
   sexe.id;
+
+
+  CREATE VIEW statistique_evaluation_typereve as
+  SELECT
+    typereve.type AS Type_De_Reve,
+    IFNULL(CONCAT(ROUND(SUM(CASE WHEN evaluationprediction.etoile = 5 THEN 1 ELSE 0 END) / COUNT(*) * 100, 2), '%'), '0%') AS Pourcentage_Evaluation_Maximum
+  FROM
+    typereve
+    LEFT JOIN reve ON typereve.id = reve.idtype
+    LEFT JOIN evaluationprediction ON reve.id = evaluationprediction.idreve
+  GROUP BY
+    typereve.id;
