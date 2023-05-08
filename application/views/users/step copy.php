@@ -5,30 +5,34 @@ $url = $url . '/assets/users/';
 ?>
 
 <!-- Mirrored from karciz.dexignzone.com/laravel/demo/app-profile by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Sep 2022 10:43:10 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Karciz | Profile</title>
-  
-  <meta name="description" content="Some description for the page"/>
+
+    <meta name="description" content="Some description for the page" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon.png">
-  
-  
-  
-   
-            <link href="<?= $url ?>public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
-            <link href="<?= $url ?>public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
-            <link href="<?= $url ?>step/style.css" rel="stylesheet" type="text/css"/>
-            <link href="<?= $url ?>step/dream.css" rel="stylesheet" type="text/css"/>
-        
 
-  
-   
-          <link href="<?= $url ?>public/css/style.css" rel="stylesheet" type="text/css"/>
-        
+
+
+
+    <link href="<?= $url ?>public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="<?= $url ?>public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="<?= $url ?>step/style.css" rel="stylesheet" type="text/css" />
+    <link href="<?= $url ?>step/dream.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    <link href="<?= $url ?>public/css/style.css" rel="stylesheet" type="text/css" />
+
 
 
 </head>
@@ -48,17 +52,17 @@ $url = $url . '/assets/users/';
     <!--**********************************
         Main wrapper start
     ***********************************-->
-    <div id="main-wrapper"class="show">
+    <div id="main-wrapper" class="show">
 
         <!--**********************************
             Nav header start
         ***********************************-->
         <div class="nav-header">
             <a href="index.html" class="brand-logo">
-                      <img class="logo-abbr" src="<?= $url ?>public/images/logo.png" alt="">
-                            <img class="logo-compact" src="<?= $url ?>public/images/logo-text.png" alt="">
+                <img class="logo-abbr" src="<?= $url ?>public/images/logo.png" alt="">
+                <img class="logo-compact" src="<?= $url ?>public/images/logo-text.png" alt="">
                 <img class="brand-title" src="<?= $url ?>public/images/logo-text.png" alt="">
-        
+
             </a>
 
             <div class="nav-control">
@@ -74,510 +78,633 @@ $url = $url . '/assets/users/';
         <!--**********************************
             Header start
         ***********************************-->
-        
-    <div class="chatbox">
-  <div class="chatbox-close"></div>
-  <div class="custom-tab-1">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#notes">Notes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#alerts">Alerts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#chat">Chat</a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane fade active show" id="chat" role="tabpanel">
-        <div class="card mb-sm-3 mb-md-0 contacts_card dz-chat-user-box">
-          <div class="card-header chat-list-header text-center">
-            <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
-            <div>
-              <h6 class="mb-1">Chat List</h6>
-              <p class="mb-0">Show All</p>
+
+        <div class="chatbox">
+            <div class="chatbox-close"></div>
+            <div class="custom-tab-1">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#notes">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#alerts">Alerts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#chat">Chat</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="chat" role="tabpanel">
+                        <div class="card mb-sm-3 mb-md-0 contacts_card dz-chat-user-box">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
+                                                x="4" y="11" width="16" height="2" rx="1" />
+                                        </g>
+                                    </svg></a>
+                                <div>
+                                    <h6 class="mb-1">Chat List</h6>
+                                    <p class="mb-0">Show All</p>
+                                </div>
+                                <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="5" cy="12" r="2" />
+                                            <circle fill="#000000" cx="12" cy="12" r="2" />
+                                            <circle fill="#000000" cx="19" cy="12" r="2" />
+                                        </g>
+                                    </svg></a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dz-scroll  " id="DZ_W_Contacts_Body">
+                                <ul class="contacts">
+                                    <li class="name-first-letter">A</li>
+                                    <li class="active dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Archie Parker</span>
+                                                <p>Kalid is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Alfie Mason</span>
+                                                <p>Taherah left 7 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/3.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>AharlieKane</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/4.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Athan Jacoby</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">B</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/5.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Bashid Samim</span>
+                                                <p>Rashid left 50 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Breddie Ronan</span>
+                                                <p>Kalid is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Ceorge Carson</span>
+                                                <p>Taherah left 7 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">D</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/3.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Darry Parker</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/4.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Denry Hunter</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">J</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/5.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Jack Ronan</span>
+                                                <p>Rashid left 50 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Jacob Tucker</span>
+                                                <p>Kalid is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>James Logan</span>
+                                                <p>Taherah left 7 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/3.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Joshua Weston</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">O</li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/4.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Oliver Acker</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dz-chat-user">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <img src="<?= $url ?>public/images/avatar/5.jpg"
+                                                    class="rounded-circle user_img" alt="" />
+                                                <span class="online_icon offline"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span>Oscar Weston</span>
+                                                <p>Rashid left 50 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card chat dz-chat-history-box d-none">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:;" class="dz-chat-history-back">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) "
+                                                x="14" y="7" width="2" height="10" rx="1" />
+                                            <path
+                                                d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+                                                fill="#000000" fill-rule="nonzero"
+                                                transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
+                                        </g>
+                                    </svg>
+                                </a>
+                                <div>
+                                    <h6 class="mb-1">Chat with Khelesh</h6>
+                                    <p class="mb-0 text-success">Online</p>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="javascript:;" data-toggle="dropdown" aria-expanded="false"><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                            viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24" />
+                                                <circle fill="#000000" cx="5" cy="12" r="2" />
+                                                <circle fill="#000000" cx="12" cy="12" r="2" />
+                                                <circle fill="#000000" cx="19" cy="12" r="2" />
+                                            </g>
+                                        </svg></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i>
+                                            View profile</li>
+                                        <li class="dropdown-item"><i class="fa fa-users text-primary mr-2"></i> Add to
+                                            close friends</li>
+                                        <li class="dropdown-item"><i class="fa fa-plus text-primary mr-2"></i> Add to
+                                            group</li>
+                                        <li class="dropdown-item"><i class="fa fa-ban text-primary mr-2"></i> Block</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body msg_card_body dz-scroll" id="DZ_W_Contacts_Body3">
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Hi, how are you samim?
+                                        <span class="msg_time">8:40 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Hi Khalid i am good tnx how about you?
+                                        <span class="msg_time_send">8:55 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am good too, thank you for your chat template
+                                        <span class="msg_time">9:00 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        You are welcome
+                                        <span class="msg_time_send">9:05 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am looking for your next templates
+                                        <span class="msg_time">9:07 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Ok, thank you have a good day
+                                        <span class="msg_time_send">9:10 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Bye, see you
+                                        <span class="msg_time">9:12 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Hi, how are you samim?
+                                        <span class="msg_time">8:40 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Hi Khalid i am good tnx how about you?
+                                        <span class="msg_time_send">8:55 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am good too, thank you for your chat template
+                                        <span class="msg_time">9:00 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        You are welcome
+                                        <span class="msg_time_send">9:05 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        I am looking for your next templates
+                                        <span class="msg_time">9:07 AM, Today</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="msg_cotainer_send">
+                                        Ok, thank you have a good day
+                                        <span class="msg_time_send">9:10 AM, Today</span>
+                                    </div>
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/2.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4">
+                                    <div class="img_cont_msg">
+                                        <img src="<?= $url ?>public/images/avatar/1.jpg"
+                                            class="rounded-circle user_img_msg" alt="" />
+                                    </div>
+                                    <div class="msg_cotainer">
+                                        Bye, see you
+                                        <span class="msg_time">9:12 AM, Today</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer type_msg">
+                                <div class="input-group">
+                                    <textarea class="form-control" placeholder="Type your message..."></textarea>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary"><i
+                                                class="fa fa-location-arrow"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="alerts" role="tabpanel">
+                        <div class="card mb-sm-3 mb-md-0 contacts_card">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="5" cy="12" r="2" />
+                                            <circle fill="#000000" cx="12" cy="12" r="2" />
+                                            <circle fill="#000000" cx="19" cy="12" r="2" />
+                                        </g>
+                                    </svg></a>
+                                <div>
+                                    <h6 class="mb-1">Notications</h6>
+                                    <p class="mb-0">Show All</p>
+                                </div>
+                                <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <path
+                                                d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path
+                                                d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                fill="#000000" fill-rule="nonzero" />
+                                        </g>
+                                    </svg></a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body1">
+                                <ul class="contacts">
+                                    <li class="name-first-letter">SEVER STATUS</li>
+                                    <li class="active">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont primary">KK</div>
+                                            <div class="user_info">
+                                                <span>David Nester Birthday</span>
+                                                <p class="text-primary">Today</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">SOCIAL</li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont success">RU<i class="icon fa-birthday-cake"></i></div>
+                                            <div class="user_info">
+                                                <span>Perfection Simplified</span>
+                                                <p>Jame Smith commented on your status</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="name-first-letter">SEVER STATUS</li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont primary">AU<i class="icon fa fa-user-plus"></i></div>
+                                            <div class="user_info">
+                                                <span>AharlieKane</span>
+                                                <p>Sami is online</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont info">MO<i class="icon fa fa-user-plus"></i></div>
+                                            <div class="user_info">
+                                                <span>Athan Jacoby</span>
+                                                <p>Nargis left 30 mins ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-footer"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="notes">
+                        <div class="card mb-sm-3 mb-md-0 note_card">
+                            <div class="card-header chat-list-header text-center">
+                                <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+                                            <rect fill="#000000" opacity="0.3"
+                                                transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
+                                                x="4" y="11" width="16" height="2" rx="1" />
+                                        </g>
+                                    </svg></a>
+                                <div>
+                                    <h6 class="mb-1">Notes</h6>
+                                    <p class="mb-0">Add New Nots</p>
+                                </div>
+                                <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                        viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <path
+                                                d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path
+                                                d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                fill="#000000" fill-rule="nonzero" />
+                                        </g>
+                                    </svg></a>
+                            </div>
+                            <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body2">
+                                <ul class="contacts">
+                                    <li class="active">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>New order placed..</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>Youtube, a video-sharing website..</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>john just buy your product..</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex bd-highlight">
+                                            <div class="user_info">
+                                                <span>Athan Jacoby</span>
+                                                <p>10 Aug 2020</p>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i
+                                                        class="fa fa-pencil"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i
+                                                        class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
-          </div>
-          <div class="card-body contacts_body p-0 dz-scroll  " id="DZ_W_Contacts_Body">
-            <ul class="contacts">
-              <li class="name-first-letter">A</li>
-              <li class="active dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Archie Parker</span>
-                    <p>Kalid is online</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Alfie Mason</span>
-                    <p>Taherah left 7 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/3.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>AharlieKane</span>
-                    <p>Sami is online</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/4.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Athan Jacoby</span>
-                    <p>Nargis left 30 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="name-first-letter">B</li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/5.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Bashid Samim</span>
-                    <p>Rashid left 50 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Breddie Ronan</span>
-                    <p>Kalid is online</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Ceorge Carson</span>
-                    <p>Taherah left 7 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="name-first-letter">D</li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/3.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Darry Parker</span>
-                    <p>Sami is online</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/4.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Denry Hunter</span>
-                    <p>Nargis left 30 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="name-first-letter">J</li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/5.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Jack Ronan</span>
-                    <p>Rashid left 50 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Jacob Tucker</span>
-                    <p>Kalid is online</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>James Logan</span>
-                    <p>Taherah left 7 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/3.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Joshua Weston</span>
-                    <p>Sami is online</p>
-                  </div>
-                </div>
-              </li>
-              <li class="name-first-letter">O</li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/4.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Oliver Acker</span>
-                    <p>Nargis left 30 mins ago</p>
-                  </div>
-                </div>
-              </li>
-              <li class="dz-chat-user">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont">
-                    <img src="<?= $url ?>public/images/avatar/5.jpg" class="rounded-circle user_img" alt=""/>
-                    <span class="online_icon offline"></span>
-                  </div>
-                  <div class="user_info">
-                    <span>Oscar Weston</span>
-                    <p>Rashid left 50 mins ago</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
-        <div class="card chat dz-chat-history-box d-none">
-          <div class="card-header chat-list-header text-center">
-            <a href="javascript:;" class="dz-chat-history-back">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"/><rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) " x="14" y="7" width="2" height="10" rx="1"/><path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) "/></g></svg>
-            </a>
-            <div>
-              <h6 class="mb-1">Chat with Khelesh</h6>
-              <p class="mb-0 text-success">Online</p>
-            </div>							
-            <div class="dropdown">
-              <a href="javascript:;" data-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i> View profile</li>
-                <li class="dropdown-item"><i class="fa fa-users text-primary mr-2"></i> Add to close friends</li>
-                <li class="dropdown-item"><i class="fa fa-plus text-primary mr-2"></i> Add to group</li>
-                <li class="dropdown-item"><i class="fa fa-ban text-primary mr-2"></i> Block</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card-body msg_card_body dz-scroll" id="DZ_W_Contacts_Body3">
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                Hi, how are you samim?
-                <span class="msg_time">8:40 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                Hi Khalid i am good tnx how about you?
-                <span class="msg_time_send">8:55 AM, Today</span>
-              </div>
-              <div class="img_cont_msg">
-            <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                I am good too, thank you for your chat template
-                <span class="msg_time">9:00 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                You are welcome
-                <span class="msg_time_send">9:05 AM, Today</span>
-              </div>
-              <div class="img_cont_msg">
-            <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                I am looking for your next templates
-                <span class="msg_time">9:07 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                Ok, thank you have a good day
-                <span class="msg_time_send">9:10 AM, Today</span>
-              </div>
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                Bye, see you
-                <span class="msg_time">9:12 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                Hi, how are you samim?
-                <span class="msg_time">8:40 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                Hi Khalid i am good tnx how about you?
-                <span class="msg_time_send">8:55 AM, Today</span>
-              </div>
-              <div class="img_cont_msg">
-            <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                I am good too, thank you for your chat template
-                <span class="msg_time">9:00 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                You are welcome
-                <span class="msg_time_send">9:05 AM, Today</span>
-              </div>
-              <div class="img_cont_msg">
-            <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                I am looking for your next templates
-                <span class="msg_time">9:07 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                Ok, thank you have a good day
-                <span class="msg_time_send">9:10 AM, Today</span>
-              </div>
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="img_cont_msg">
-                <img src="<?= $url ?>public/images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
-              </div>
-              <div class="msg_cotainer">
-                Bye, see you
-                <span class="msg_time">9:12 AM, Today</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer type_msg">
-            <div class="input-group">
-              <textarea class="form-control" placeholder="Type your message..."></textarea>
-              <div class="input-group-append">
-                <button type="button" class="btn btn-primary"><i class="fa fa-location-arrow"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="alerts" role="tabpanel">
-        <div class="card mb-sm-3 mb-md-0 contacts_card">
-          <div class="card-header chat-list-header text-center">
-            <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
-            <div>
-              <h6 class="mb-1">Notications</h6>
-              <p class="mb-0">Show All</p>
-            </div>
-            <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
-          </div>
-          <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body1">
-            <ul class="contacts">
-              <li class="name-first-letter">SEVER STATUS</li>
-              <li class="active">
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont primary">KK</div>
-                  <div class="user_info">
-                    <span>David Nester Birthday</span>
-                    <p class="text-primary">Today</p>
-                  </div>
-                </div>
-              </li>
-              <li class="name-first-letter">SOCIAL</li>
-              <li>
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont success">RU<i class="icon fa-birthday-cake"></i></div>
-                  <div class="user_info">
-                    <span>Perfection Simplified</span>
-                    <p>Jame Smith commented on your status</p>
-                  </div>
-                </div>
-              </li>
-              <li class="name-first-letter">SEVER STATUS</li>
-              <li>
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont primary">AU<i class="icon fa fa-user-plus"></i></div>
-                  <div class="user_info">
-                    <span>AharlieKane</span>
-                    <p>Sami is online</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex bd-highlight">
-                  <div class="img_cont info">MO<i class="icon fa fa-user-plus"></i></div>
-                  <div class="user_info">
-                    <span>Athan Jacoby</span>
-                    <p>Nargis left 30 mins ago</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="card-footer"></div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="notes">
-        <div class="card mb-sm-3 mb-md-0 note_card">
-          <div class="card-header chat-list-header text-center">
-            <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
-            <div>
-              <h6 class="mb-1">Notes</h6>
-              <p class="mb-0">Add New Nots</p>
-            </div>
-            <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
-          </div>
-          <div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body2">
-            <ul class="contacts">
-              <li class="active">
-                <div class="d-flex bd-highlight">
-                  <div class="user_info">
-                    <span>New order placed..</span>
-                    <p>10 Aug 2020</p>
-                  </div>
-                  <div class="ml-auto">
-                    <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                    <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex bd-highlight">
-                  <div class="user_info">
-                    <span>Youtube, a video-sharing website..</span>
-                    <p>10 Aug 2020</p>
-                  </div>
-                  <div class="ml-auto">
-                    <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                    <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex bd-highlight">
-                  <div class="user_info">
-                    <span>john just buy your product..</span>
-                    <p>10 Aug 2020</p>
-                  </div>
-                  <div class="ml-auto">
-                    <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                    <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex bd-highlight">
-                  <div class="user_info">
-                    <span>Athan Jacoby</span>
-                    <p>10 Aug 2020</p>
-                  </div>
-                  <div class="ml-auto">
-                    <a href="javascript:;" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                    <a href="javascript:;" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--**********************************
+        <!--**********************************
         Chat box End
     ***********************************-->
 
-<!--**********************************
+        <!--**********************************
         Header start
     ***********************************-->
-<!-- <div class="header">
+        <!-- <div class="header">
   <div class="header-content">
       <nav class="navbar navbar-expand">
           <div class="collapse navbar-collapse justify-content-between">
@@ -779,7 +906,7 @@ $url = $url . '/assets/users/';
       </nav>
   </div>
 </div>		 -->
-    
+
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -789,24 +916,24 @@ $url = $url . '/assets/users/';
         ***********************************-->
         <div class="deznav">
             <div class="deznav-scroll">
-        <ul class="metismenu" id="menu">
+                <ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-              <i class="flaticon-381-networking"></i>
-              <span class="nav-text">Dashboard</span>
-            </a>
-            <ul aria-expanded="false">
-              <li><a href="index.html">Dashboard</a></li>
-              <li><a href="event-list.html">Event List</a></li>
-              <li><a href="page-event.html">Event</a></li>
-              <li><a href="customers.html">Customer</a></li>
-              <li><a href="page-analytics.html">Analytics</a></li>
-              <li><a href="page-review.html">Review</a></li>
-            </ul>
+                            <i class="flaticon-381-networking"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="index.html">Dashboard</a></li>
+                            <li><a href="event-list.html">Event List</a></li>
+                            <li><a href="page-event.html">Event</a></li>
+                            <li><a href="customers.html">Customer</a></li>
+                            <li><a href="page-analytics.html">Analytics</a></li>
+                            <li><a href="page-review.html">Review</a></li>
+                        </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-            <i class="flaticon-381-television"></i>
-              <span class="nav-text">Apps</span>
-            </a>
+                            <i class="flaticon-381-television"></i>
+                            <span class="nav-text">Apps</span>
+                        </a>
                         <ul aria-expanded="false">
                             <li><a href="app-profile.html">Profile</a></li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
@@ -817,23 +944,23 @@ $url = $url . '/assets/users/';
                                 </ul>
                             </li>
                             <li><a href="app-calender.html">Calendar</a></li>
-              <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
                                 <ul aria-expanded="false">
                                     <li><a href="ecom-product-grid.html">Product Grid</a></li>
-                  <li><a href="ecom-product-list.html">Product List</a></li>
-                  <li><a href="ecom-product-detail.html">Product Details</a></li>
-                  <li><a href="ecom-product-order.html">Order</a></li>
-                  <li><a href="ecom-checkout.html">Checkout</a></li>
-                  <li><a href="ecom-invoice.html">Invoice</a></li>
-                  <li><a href="ecom-customers.html">Customers</a></li>
+                                    <li><a href="ecom-product-list.html">Product List</a></li>
+                                    <li><a href="ecom-product-detail.html">Product Details</a></li>
+                                    <li><a href="ecom-product-order.html">Order</a></li>
+                                    <li><a href="ecom-checkout.html">Checkout</a></li>
+                                    <li><a href="ecom-invoice.html">Invoice</a></li>
+                                    <li><a href="ecom-customers.html">Customers</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-              <i class="flaticon-381-controls-3"></i>
-              <span class="nav-text">Charts</span>
-            </a>
+                            <i class="flaticon-381-controls-3"></i>
+                            <span class="nav-text">Charts</span>
+                        </a>
                         <ul aria-expanded="false">
                             <li><a href="chart-flot.html">Flot</a></li>
                             <li><a href="chart-morris.html">Morris</a></li>
@@ -844,211 +971,262 @@ $url = $url . '/assets/users/';
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-              <i class="flaticon-381-internet"></i>
-              <span class="nav-text">Bootstrap</span>
-            </a>
-                
-                       
-     
-        <div class="copyright">
-          <p class="fs-14 font-w200"><strong class="font-w400">Karciz Ticketing Admin Dashboard</strong> © 2020 All Rights Reserved</p>
-          <p>Made with <i class="fa fa-heart text-danger"></i> by DexignZone</p>
+                            <i class="flaticon-381-internet"></i>
+                            <span class="nav-text">Bootstrap</span>
+                        </a>
+
+
+
+                        <div class="copyright">
+                            <p class="fs-14 font-w200"><strong class="font-w400">Karciz Ticketing Admin
+                                    Dashboard</strong> © 2020 All Rights Reserved</p>
+                            <p>Made with <i class="fa fa-heart text-danger"></i> by DexignZone</p>
+                        </div>
+            </div>
         </div>
-      </div>
-        </div>        <!--**********************************
+        <!--**********************************
             Sidebar end
         ***********************************-->
 
-    
-    
+
+
         <!--**********************************
             Content body start
         ***********************************-->
-       
+
         <div class="content-body">
             <!-- row -->
-                        <!-- row -->
-      <div class="container-fluid" >
-                
+            <!-- row -->
+            <div class="container-fluid">
+
 
 
 
 
                 <Horizon>
 
-     <Road>
-<div class="di-body" >
+                    <Road>
+                        <div class="di-body">
 
-<img alt="image" class="robot" width="50" src="<?= $url ?>public/images/avatar/1.jpg">
+                            <img alt="image" class="robot" width="50" src="<?= $url ?>public/images/avatar/1.jpg">
 
-<!-- partial:index.partial.html -->
-<!--PEN HEADER-->
-<div class="di-content">
-  <div class="di-content__inner">
-    <div class="container">
-      <!--di-content title-->
-      <h1 class="di-content__title di-content__title--m-sm" style="font-size:50px">MAKE DREAM</h1>
-      <!--animations form-->
-      
-      <!--di-content title-->
-      
-    </div>
-    <div class="container overflow-hidden">
-      <!--multisteps-form-->
-      <div class="multisteps-form">
-        <!--progress bar-->
-        <div class="row">
-          <div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
-            <div class="multisteps-form__progress">
-              <button class="multisteps-form__progress-btn js-active btn btn-danger"  type="button" title="User Info">User Info</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Address">Address</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Order Info">Order Info</button>
-              <button class="multisteps-form__progress-btn" type="button" title="Comments">Comments        </button>
+                            <!-- partial:index.partial.html -->
+                            <!--PEN HEADER-->
+                            <div class="di-content">
+                                <div class="di-content__inner">
+                                    <div class="container">
+                                        <!--di-content title-->
+                                        <h1 class="di-content__title di-content__title--m-sm" style="font-size:50px">
+                                            MAKE DREAM</h1>
+                                        <!--animations form-->
+
+                                        <!--di-content title-->
+
+                                    </div>
+                                    <div class="container overflow-hidden">
+                                        <!--multisteps-form-->
+                                        <div class="multisteps-form">
+                                            <!--progress bar-->
+                                            <div class="row">
+                                                <div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
+                                                    <div class="multisteps-form__progress">
+                                                        <button
+                                                            class="multisteps-form__progress-btn js-active btn btn-danger"
+                                                            type="button" title="User Info">User Info</button>
+                                                        <button class="multisteps-form__progress-btn" type="button"
+                                                            title="Address">Address</button>
+                                                        <button class="multisteps-form__progress-btn" type="button"
+                                                            title="Order Info">Order Info</button>
+                                                        <button class="multisteps-form__progress-btn" type="button"
+                                                            title="Comments">Comments </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--form panels-->
+                                            <div class="row">
+                                                <div class="col-12 col-lg-8 m-auto">
+                                                    <form class="multisteps-form__form">
+                                                        <!--single form panel-->
+                                                        <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
+                                                            data-animation="scaleIn">
+                                                            <h3 class="multisteps-form__title">Your User Info</h3>
+                                                            <div class="multisteps-form__di-content">
+                                                                <div class="form-row mt-4">
+                                                                    <div class="col-12 col-sm-6">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="First Name" />
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="Last Name" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row mt-4">
+                                                                    <div class="col-12 col-sm-6">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="Login" />
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="email" placeholder="Email" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row mt-4">
+                                                                    <div class="col-12 col-sm-6">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="password" placeholder="Password" />
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="password"
+                                                                            placeholder="Repeat Password" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="button-row d-flex mt-4">
+                                                                    <button class="btn btn-primary ml-auto js-btn-next"
+                                                                        type="button" title="Next">Next</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--single form panel-->
+                                                        <div class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                            data-animation="scaleIn">
+                                                            <h3 class="multisteps-form__title">Your Address</h3>
+                                                            <div class="multisteps-form__di-content">
+                                                                <div class="form-row mt-4">
+                                                                    <div class="col">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="Address 1" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row mt-4">
+                                                                    <div class="col">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="Address 2" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row mt-4">
+                                                                    <div class="col-12 col-sm-6">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="City" />
+                                                                    </div>
+                                                                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                                                                        <select
+                                                                            class="multisteps-form__select form-control">
+                                                                            <option selected="selected">State...
+                                                                            </option>
+                                                                            <option>...</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                                                                        <input
+                                                                            class="multisteps-form__input form-control"
+                                                                            type="text" placeholder="Zip" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="button-row d-flex mt-4">
+                                                                    <button class="btn btn-primary js-btn-prev"
+                                                                        type="button" title="Prev">Prev</button>
+                                                                    <button class="btn btn-primary ml-auto js-btn-next"
+                                                                        type="button" title="Next">Next</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--single form panel-->
+                                                        <div class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                            data-animation="scaleIn">
+                                                            <h3 class="multisteps-form__title">Your Order Info</h3>
+                                                            <div class="multisteps-form__di-content">
+                                                                <div class="row">
+                                                                    <div class="col-12 col-md-6 mt-4">
+                                                                        <div class="card shadow-sm">
+                                                                            <div class="card-body">
+                                                                                <h5 class="card-title">Item Title</h5>
+                                                                                <p class="card-text">Small and nice item
+                                                                                    description</p><a
+                                                                                    class="btn btn-primary" href="#"
+                                                                                    title="Item Link">Item Link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12 col-md-6 mt-4">
+                                                                        <div class="card shadow-sm">
+                                                                            <div class="card-body">
+                                                                                <h5 class="card-title">Item Title</h5>
+                                                                                <p class="card-text">Small and nice item
+                                                                                    description</p><a
+                                                                                    class="btn btn-primary" href="#"
+                                                                                    title="Item Link">Item Link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="button-row d-flex mt-4 col-12">
+                                                                        <button class="btn btn-primary js-btn-prev"
+                                                                            type="button" title="Prev">Prev</button>
+                                                                        <button
+                                                                            class="btn btn-primary ml-auto js-btn-next"
+                                                                            type="button" title="Next">Next</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--single form panel-->
+                                                        <div class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                                            data-animation="scaleIn">
+                                                            <h3 class="multisteps-form__title">Additional Comments</h3>
+                                                            <div class="multisteps-form__di-content">
+                                                                <div class="form-row mt-4">
+                                                                    <textarea
+                                                                        class="multisteps-form__textarea form-control"
+                                                                        placeholder="Additional Comments and Requirements"></textarea>
+                                                                </div>
+                                                                <div class="button-row d-flex mt-4">
+                                                                    <button class="btn btn-primary js-btn-prev"
+                                                                        type="button" title="Prev">Prev</button>
+                                                                    <button class="btn btn-success ml-auto"
+                                                                        type="button" title="Send">Send</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                </Horizon>
+                <Road>
+
+                </Road>
+
+
+
+
+
+
             </div>
-          </div>
-        </div>
-        <!--form panels-->
-        <div class="row">
-          <div class="col-12 col-lg-8 m-auto">
-            <form class="multisteps-form__form">
-              <!--single form panel-->
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Your User Info</h3>
-                <div class="multisteps-form__di-content">
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="First Name"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Last Name"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Login"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="email" placeholder="Email"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="password" placeholder="Password"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="password" placeholder="Repeat Password"/>
-                    </div>
-                  </div>
-                  <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
-                  </div>
-                </div>
-              </div>
-              <!--single form panel-->
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Your Address</h3>
-                <div class="multisteps-form__di-content">
-                  <div class="form-row mt-4">
-                    <div class="col">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Address 1"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Address 2"/>
-                    </div>
-                  </div>
-                  <div class="form-row mt-4">
-                    <div class="col-12 col-sm-6">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="City"/>
-                    </div>
-                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                      <select class="multisteps-form__select form-control">
-                        <option selected="selected">State...</option>
-                        <option>...</option>
-                      </select>
-                    </div>
-                    <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                      <input class="multisteps-form__input form-control" type="text" placeholder="Zip"/>
-                    </div>
-                  </div>
-                  <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
-                  </div>
-                </div>
-              </div>
-              <!--single form panel-->
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Your Order Info</h3>
-                <div class="multisteps-form__di-content">
-                  <div class="row">
-                    <div class="col-12 col-md-6 mt-4">
-                      <div class="card shadow-sm">
-                        <div class="card-body">
-                          <h5 class="card-title">Item Title</h5>
-                          <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-6 mt-4">
-                      <div class="card shadow-sm">
-                        <div class="card-body">
-                          <h5 class="card-title">Item Title</h5>
-                          <p class="card-text">Small and nice item description</p><a class="btn btn-primary" href="#" title="Item Link">Item Link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="button-row d-flex mt-4 col-12">
-                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--single form panel-->
-              <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                <h3 class="multisteps-form__title">Additional Comments</h3>
-                <div class="multisteps-form__di-content">
-                  <div class="form-row mt-4">
-                    <textarea class="multisteps-form__textarea form-control" placeholder="Additional Comments and Requirements"></textarea>
-                  </div>
-                  <div class="button-row d-flex mt-4">
-                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                    <button class="btn btn-success ml-auto" type="button" title="Send">Send</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
-
-
-
-
-
-
-</Horizon>
-<Road>
-    
-</Road>
-
-
-
-
-
-
-            </div>
-      
         </div>
         <!--**********************************
             Content body end
@@ -1058,17 +1236,18 @@ $url = $url . '/assets/users/';
         <!--**********************************
             Footer start
         ***********************************-->
-        
-    <div class="footer">
-    <div class="copyright">
-        <p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/" target="_blank">DexignZone</a> 2020</p>
-    </div>
-</div>		
+
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/"
+                        target="_blank">DexignZone</a> 2020</p>
+            </div>
+        </div>
         <!--**********************************
             Footer end
         ***********************************-->
 
-    <!--**********************************
+        <!--**********************************
            Support ticket button start
         ***********************************-->
 
@@ -1085,17 +1264,20 @@ $url = $url . '/assets/users/';
     <!--**********************************
         Scripts
     ***********************************-->
-  <script src="<?= $url ?>public/vendor/global/global.min.js" type="text/javascript"></script>
-          <script src="<?= $url ?>public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
-        <script src="<?= $url ?>public/js/custom.min.js" type="text/javascript"></script>
-        <script src="<?= $url ?>public/js/deznav-init.js" type="text/javascript"></script>
-        <script src="<?= $url ?>step/script.js" type="text/javascript"></script>
+    <script src="<?= $url ?>public/vendor/global/global.min.js" type="text/javascript"></script>
+    <script src="<?= $url ?>public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript">
+    </script>
+    <script src="<?= $url ?>public/js/custom.min.js" type="text/javascript"></script>
+    <script src="<?= $url ?>public/js/deznav-init.js" type="text/javascript"></script>
+    <script src="<?= $url ?>step/script.js" type="text/javascript"></script>
     <script id="DZScript" src="../../../dzassets.s3.amazonaws.com/w3-global8bb6.js?btn_dir=right"></script>
 
-  <!--		<script src="https://karciz.dexignzone.com/laravel/demo/js/custom.min.js" type="text/javascript"></script>
+    <!--		<script src="https://karciz.dexignzone.com/laravel/demo/js/custom.min.js" type="text/javascript"></script>
       <script src="https://karciz.dexignzone.com/laravel/demo/js/deznav-init.js" type="text/javascript"></script> -->
-<!--	
-   --></body>
+    <!--	
+   -->
+</body>
 
 <!-- Mirrored from karciz.dexignzone.com/laravel/demo/app-profile by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Sep 2022 10:43:20 GMT -->
+
 </html>

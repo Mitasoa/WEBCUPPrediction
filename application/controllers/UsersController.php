@@ -30,9 +30,7 @@ class UsersController extends CI_Controller
         $this->load->model('ImageEndroit');
         $mot = $_GET['mot'];
         $liste = $this->ImageEndroit->liste($mot);
-        // echo $liste;
 		echo json_encode($liste);
-		// print_r($liste);
     }
 	
 	

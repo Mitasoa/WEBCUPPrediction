@@ -46,7 +46,8 @@ $url=site_url('');
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="<?php //echo site_url('Welcome/' ?>">Mon espace client</a></li>
+                                <li class="active"><a href="<?php //echo site_url('Welcome/' ?>">Mon espace client</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

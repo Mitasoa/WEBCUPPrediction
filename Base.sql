@@ -2,9 +2,21 @@ CREATE TABLE sexe (
   id INT PRIMARY KEY AUTO_INCREMENT,
   sexe varchar(50) NOT NULL
 );
-insert into sexe(sexe) values('Femme');
-insert into sexe(sexe) values('Homme');
-insert into sexe(sexe) values('Inconnu');
+
+insert into
+  sexe(sexe)
+values
+('Femme');
+
+insert into
+  sexe(sexe)
+values
+('Homme');
+
+insert into
+  sexe(sexe)
+values
+('Inconnu');
 
 CREATE TABLE utilisateur (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -145,7 +157,6 @@ CREATE TABLE destin (
   destin varchar(255)
 );
 
-
 CREATE TABLE prediction (
   id INT PRIMARY KEY AUTO_INCREMENT,
   photo varchar(255),
@@ -171,21 +182,20 @@ ADD
   FOREIGN KEY(idreve) REFERENCES reve(id);
 
 CREATE TABLE predictionreve (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	idreve int,
-	idprediction int
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  idreve int,
+  idprediction int
 );
 
 ALTER TABLE
-	predictionreve
+  predictionreve
 ADD
-	FOREIGN KEY(idreve) REFERENCES reve(id);
+  FOREIGN KEY(idreve) REFERENCES reve(id);
 
 ALTER TABLE
-	predictionreve
+  predictionreve
 ADD
-	FOREIGN KEY(idprediction) REFERENCES prediction(id);
-
+  FOREIGN KEY(idprediction) REFERENCES prediction(id);
 
 create view listereve as
 select
@@ -286,7 +296,6 @@ insert into
   typereve(type)
 values
   ('creatif');
-
 
 insert into
   endroit(endroit)
@@ -434,7 +443,6 @@ insert into
   imageendroit(idendroit, image, description)
 values
   (8, 'plage1.png', 'Plage a l"extieur vue facade');
-  
 
 CREATE VIEW statistique_sexe_typereve as
 SELECT
@@ -460,194 +468,492 @@ GROUP BY
   typereve.id,
   sexe.id;
 
+CREATE VIEW statistique_evaluation_typereve as
+SELECT
+  typereve.type AS Type_De_Reve,
+  IFNULL(
+    CONCAT(
+      ROUND(
+        SUM(
+          CASE
+            WHEN evaluationprediction.etoile = 5 THEN 1
+            ELSE 0
+          END
+        ) / COUNT(*) * 100,
+        2
+      ),
+      '%'
+    ),
+    '0%'
+  ) AS Pourcentage_Evaluation_Maximum
+FROM
+  typereve
+  LEFT JOIN reve ON typereve.id = reve.idtype
+  LEFT JOIN evaluationprediction ON reve.id = evaluationprediction.idreve
+GROUP BY
+  typereve.id;
 
+INSERT INTO
+  utilisateur (
+    email,
+    mdp,
+    nom,
+    idsexe,
+    datedenaissance,
+    googleid
+  )
+VALUES
+  (
+    'johndoe@gmail.com',
+    SHA1('secret'),
+    'John Doe',
+    1,
+    '1990-01-01',
+    NULL
+  ),
+  (
+    'janedoe@gmail.com',
+    SHA1('password'),
+    'Jane Doe',
+    2,
+    '1995-06-15',
+    NULL
+  ),
+  (
+    'bobsmith@gmail.com',
+    SHA1('123456'),
+    'Bob Smith',
+    1,
+    '1985-12-31',
+    NULL
+  ),
+  (
+    'maryjones@yahoo.com',
+    SHA1('qwerty'),
+    'Mary Jones',
+    2,
+    '1980-05-20',
+    NULL
+  ),
+  (
+    'jimmychoo@hotmail.com',
+    SHA1('letmein'),
+    'Jimmy Choo',
+    1,
+    '1977-02-14',
+    NULL
+  );
 
-  CREATE VIEW statistique_evaluation_typereve as
-  SELECT
-    typereve.type AS Type_De_Reve,
-    IFNULL(CONCAT(ROUND(SUM(CASE WHEN evaluationprediction.etoile = 5 THEN 1 ELSE 0 END) / COUNT(*) * 100, 2), '%'), '0%') AS Pourcentage_Evaluation_Maximum
-  FROM
-    typereve
-    LEFT JOIN reve ON typereve.id = reve.idtype
-    LEFT JOIN evaluationprediction ON reve.id = evaluationprediction.idreve
-  GROUP BY
-    typereve.id;
+INSERT INTO
+  admin (email, mdp)
+VALUES
+  ('lucas@gmail.com', SHA1('0000'));
 
+INSERT INTO
+  typereve (type)
+VALUES
+  ('Prémonitoire'),
+  ('Lucide'),
+  ('Érotique');
 
+INSERT INTO
+  imageendroit (idendroit, image, description)
+VALUES
+  (
+    1,
+    'parking6.jpg',
+    'Vue du parking depuis la rue'
+  ),
+  (1, 'parking7.jpg', 'Entrée du parking'),
+  (1, 'parking8.jpg', 'Ascenseur du parking'),
+  (1, 'parking9.jpg', 'Sortie du parking'),
+  (
+    1,
+    'parking10.jpg',
+    'Vue de l\'intérieur du parking'
+  );
 
-INSERT INTO utilisateur (email, mdp, nom, idsexe, datedenaissance, googleid)
-VALUES 
-('johndoe@gmail.com', SHA1('secret'), 'John Doe', 1, '1990-01-01', NULL),
-('janedoe@gmail.com', SHA1('password'), 'Jane Doe', 2, '1995-06-15', NULL),
-('bobsmith@gmail.com', SHA1('123456'), 'Bob Smith', 1, '1985-12-31', NULL),
-('maryjones@yahoo.com', SHA1('qwerty'), 'Mary Jones', 2, '1980-05-20', NULL),
-('jimmychoo@hotmail.com', SHA1('letmein'), 'Jimmy Choo', 1, '1977-02-14', NULL);
+INSERT INTO
+  imageendroit (idendroit, image, description)
+VALUES
+  (2, 'forest4.jpg', 'Vue panoramique de la forêt'),
+  (2, 'forest5.jpg', 'Pont suspendu dans la forêt'),
+  (
+    2,
+    'forest6.jpg',
+    'Chemin de randonnée dans la forêt'
+  ),
+  (2, 'forest7.jpg', 'Cours d\'eau dans la forêt'),
+  (2, 'forest8.jpg', 'Vue aérienne de la forêt');
 
+INSERT INTO
+  imageendroit (idendroit, image, description)
+VALUES
+  (3, 'hotel3.jpg', 'Hall d\'entrée de l\'hôtel'),
+  (3, 'hotel4.jpg', 'Piscine de l\'hôtel'),
+  (3, 'hotel5.jpg', 'Vue aérienne de l\'hôtel'),
+  (3, 'hotel6.jpg', 'Restaurant de l\'hôtel'),
+  (3, 'hotel7.jpg', 'Chambre de l\'hôtel');
 
-INSERT INTO admin (email, mdp)
-VALUES ('lucas@gmail.com', SHA1('0000'));
+INSERT INTO
+  imageendroit (idendroit, image, description)
+VALUES
+  (4, 'tomb1.jpg', 'Vue d\'ensemble de la tombe'),
+  (4, 'tomb2.jpg', 'Statue sur la tombe'),
+  (
+    4,
+    'tomb3.jpg',
+    'Vue de la tombe depuis le haut de la colline'
+  ),
+  (4, 'tomb4.jpg', 'Sculptures sur la tombe'),
+  (4, 'tomb5.jpg', 'Intérieur de la tombe');
 
-
-INSERT INTO typereve (type)
-VALUES ('Prémonitoire'), ('Lucide'), ('Érotique');
-
-INSERT INTO imageendroit (idendroit, image, description)
-VALUES (1, 'parking6.jpg', 'Vue du parking depuis la rue'),
-       (1, 'parking7.jpg', 'Entrée du parking'),
-       (1, 'parking8.jpg', 'Ascenseur du parking'),
-       (1, 'parking9.jpg', 'Sortie du parking'),
-       (1, 'parking10.jpg', 'Vue de l\'intérieur du parking');
-
-
-INSERT INTO imageendroit (idendroit, image, description)
-VALUES (2, 'forest4.jpg', 'Vue panoramique de la forêt'),
-       (2, 'forest5.jpg', 'Pont suspendu dans la forêt'),
-       (2, 'forest6.jpg', 'Chemin de randonnée dans la forêt'),
-       (2, 'forest7.jpg', 'Cours d\'eau dans la forêt'),
-       (2, 'forest8.jpg', 'Vue aérienne de la forêt');
-
-
-INSERT INTO imageendroit (idendroit, image, description)
-VALUES (3, 'hotel3.jpg', 'Hall d\'entrée de l\'hôtel'),
-       (3, 'hotel4.jpg', 'Piscine de l\'hôtel'),
-       (3, 'hotel5.jpg', 'Vue aérienne de l\'hôtel'),
-       (3, 'hotel6.jpg', 'Restaurant de l\'hôtel'),
-       (3, 'hotel7.jpg', 'Chambre de l\'hôtel');
-
-INSERT INTO imageendroit (idendroit, image, description)
-VALUES (4, 'tomb1.jpg', 'Vue d\'ensemble de la tombe'),
-       (4, 'tomb2.jpg', 'Statue sur la tombe'),
-       (4, 'tomb3.jpg', 'Vue de la tombe depuis le haut de la colline'),
-       (4, 'tomb4.jpg', 'Sculptures sur la tombe'),
-       (4, 'tomb5.jpg', 'Intérieur de la tombe');
-
-
-INSERT INTO imageendroit (idendroit, image, description)
-VALUES (5, 'eglise3.jpg', 'Intérieur de l\'église avec des vitraux colorés'),
-       (5, 'eglise4.jpg', 'Le toit de l\'église avec des tuiles en terre cuite'),
-       (5, 'eglise5.jpg', 'Le clocher de l\'église vu de loin'),
-       (5, 'eglise6.jpg', 'Vue panoramique de l\'église et de son environnement'),
-       (5, 'eglise7.jpg', 'L\'autel de l\'église avec ses décorations en bois sculpté');
+INSERT INTO
+  imageendroit (idendroit, image, description)
+VALUES
+  (
+    5,
+    'eglise3.jpg',
+    'Intérieur de l\'église avec des vitraux colorés'
+  ),
+  (
+    5,
+    'eglise4.jpg',
+    'Le toit de l\'église avec des tuiles en terre cuite'
+  ),
+  (
+    5,
+    'eglise5.jpg',
+    'Le clocher de l\'église vu de loin'
+  ),
+  (
+    5,
+    'eglise6.jpg',
+    'Vue panoramique de l\'église et de son environnement'
+  ),
+  (
+    5,
+    'eglise7.jpg',
+    'L\'autel de l\'église avec ses décorations en bois sculpté'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (6, 'maison6.png', 'Maison en pierre sur une colline');
+  (
+    6,
+    'maison6.png',
+    'Maison en pierre sur une colline'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (6, 'maison7.png', 'Maison victorienne au coucher du soleil');
+  (
+    6,
+    'maison7.png',
+    'Maison victorienne au coucher du soleil'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (6, 'maison8.png', 'Maison abandonnée en pleine nature');
+  (
+    6,
+    'maison8.png',
+    'Maison abandonnée en pleine nature'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (6, 'maison9.png', 'Maison colorée dans un quartier animé');
+  (
+    6,
+    'maison9.png',
+    'Maison colorée dans un quartier animé'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (6, 'maison10.png', 'Maison rustique dans une petite ville de campagne');
-
-
-insert into
-imageendroit(idendroit, image, description)
-values
-(
-7,
-'ecole3.png',
-'Ecole interieure avec des salles de classe modernes'
-);
-
-insert into
-imageendroit(idendroit, image, description)
-values
-(7, 'ecole4.png', 'Ecole en banlieue');
-
-insert into
-imageendroit(idendroit, image, description)
-values
-(7, 'ecole5.png', 'Ecole maternelle en zone urbaine');
-
+  (
+    6,
+    'maison10.png',
+    'Maison rustique dans une petite ville de campagne'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (8, 'plage2.jpg', 'Plage de sable fin avec des palmiers');
+  (
+    7,
+    'ecole3.png',
+    'Ecole interieure avec des salles de classe modernes'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (8, 'plage3.jpg', 'Plage de galets avec des falaises');
+  (7, 'ecole4.png', 'Ecole en banlieue');
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (8, 'plage4.jpg', 'Plage animée avec des parasols et des transats');
+  (
+    7,
+    'ecole5.png',
+    'Ecole maternelle en zone urbaine'
+  );
 
 insert into
   imageendroit(idendroit, image, description)
 values
-  (8, 'plage5.jpg', 'Plage déserte au coucher du soleil');
-  
+  (
+    8,
+    'plage2.jpg',
+    'Plage de sable fin avec des palmiers'
+  );
+
 insert into
   imageendroit(idendroit, image, description)
 values
-  (8, 'plage6.jpg', 'Plage avec vue sur une île au loin');
+  (
+    8,
+    'plage3.jpg',
+    'Plage de galets avec des falaises'
+  );
 
-INSERT INTO prediction (photo, prediction, idtypereve) 
-VALUES 
-('image1.jpg', 'Vous rencontrerez bientôt quelqu\'un de spécial.', 1),
-('image2.png', 'Vous aurez une promotion au travail.', 2),
-('image3.jpg', 'Vous ferez un voyage à l\'étranger prochainement.', 1),
-('image4.png', 'Vous devrez prendre une décision difficile dans les prochains jours.', 3),
-('image5.jpg', 'Vous ferez une rencontre qui changera votre vie.', 1),
-('image6.png', 'Vous ferez une découverte surprenante.', 4),
-('image7.jpg', 'Vous devrez faire preuve de patience dans une situation difficile.', 3),
-('image8.png', 'Vous recevrez une bonne nouvelle dans les prochains jours.', 2),
-('image9.jpg', 'Vous devrez prendre un risque pour atteindre votre objectif.', 4),
-('image10.png', 'Vous traverserez une période de stress, mais tout ira bien à la fin.', 3);
-INSERT INTO prediction (photo, prediction, idtypereve)
-VALUES ('foret1.jpg', 'Vous allez bientôt trouver un trésor caché dans la forêt.', 5),
-       ('maison2.png', 'Vous allez bientôt rencontrer quelqu\'un qui changera votre vie.', 4);
-INSERT INTO prediction (photo, prediction, idtypereve)
-VALUES ('maison1.png', 'Vous allez bientôt déménager dans une grande maison', 5),
-       ('ecole1.png', 'Vous allez réussir à obtenir votre diplôme avec mention', 5);
+insert into
+  imageendroit(idendroit, image, description)
+values
+  (
+    8,
+    'plage4.jpg',
+    'Plage animée avec des parasols et des transats'
+  );
 
-INSERT INTO reve (idutilisateur, date, idtype) VALUES
-(1, '2022-05-01', 2),
-(2, '2022-05-02', 1);
-INSERT INTO reve (idutilisateur, date, idtype) VALUES (1, '2023-05-07', 2);
-INSERT INTO reve (idutilisateur, date, idtype) VALUES (2, '2023-05-06', 3);
-INSERT INTO reve (idutilisateur, date, idtype) VALUES (1, '2023-05-05', 1);
-INSERT INTO reve (idutilisateur, date, idtype) VALUES (3, '2023-05-04', 4);
-INSERT INTO reve (idutilisateur, date, idtype) VALUES (2, '2023-05-03', 2);
+insert into
+  imageendroit(idendroit, image, description)
+values
+  (
+    8,
+    'plage5.jpg',
+    'Plage déserte au coucher du soleil'
+  );
 
-INSERT INTO evaluationprediction (idreve, etoile, commentaire) VALUES
-(1, 4, 'Bonne prédiction, mais manque de détails.'),
-(2, 5, 'Prédiction exacte, très impressionnant !');
+insert into
+  imageendroit(idendroit, image, description)
+values
+  (
+    8,
+    'plage6.jpg',
+    'Plage avec vue sur une île au loin'
+  );
 
+INSERT INTO
+  prediction (photo, prediction, idtypereve)
+VALUES
+  (
+    'image1.jpg',
+    'Vous rencontrerez bientôt quelqu\'un de spécial.',
+    1
+  ),
+  (
+    'image2.png',
+    'Vous aurez une promotion au travail.',
+    2
+  ),
+  (
+    'image3.jpg',
+    'Vous ferez un voyage à l\'étranger prochainement.',
+    1
+  ),
+  (
+    'image4.png',
+    'Vous devrez prendre une décision difficile dans les prochains jours.',
+    3
+  ),
+  (
+    'image5.jpg',
+    'Vous ferez une rencontre qui changera votre vie.',
+    1
+  ),
+  (
+    'image6.png',
+    'Vous ferez une découverte surprenante.',
+    4
+  ),
+  (
+    'image7.jpg',
+    'Vous devrez faire preuve de patience dans une situation difficile.',
+    3
+  ),
+  (
+    'image8.png',
+    'Vous recevrez une bonne nouvelle dans les prochains jours.',
+    2
+  ),
+  (
+    'image9.jpg',
+    'Vous devrez prendre un risque pour atteindre votre objectif.',
+    4
+  ),
+  (
+    'image10.png',
+    'Vous traverserez une période de stress, mais tout ira bien à la fin.',
+    3
+  );
 
-INSERT INTO evaluationprediction (idreve, etoile, commentaire) VALUES (1, 4, 'J''ai trouvé cette prédiction intéressante !');
-INSERT INTO evaluationprediction (idreve, etoile, commentaire) VALUES (2, 5, 'La prédiction s''est avérée vraie !');
-INSERT INTO evaluationprediction (idreve, etoile, commentaire) VALUES (3, 3, 'Pas vraiment convaincu par cette prédiction...');
-INSERT INTO evaluationprediction (idreve, etoile, commentaire) VALUES (4, 2, 'Je ne crois pas du tout à cette prédiction.');
-INSERT INTO evaluationprediction (idreve, etoile, commentaire) VALUES (5, 1, 'Je n''ai pas du tout aimé cette prédiction.');
+INSERT INTO
+  prediction (photo, prediction, idtypereve)
+VALUES
+  (
+    'foret1.jpg',
+    'Vous allez bientôt trouver un trésor caché dans la forêt.',
+    5
+  ),
+  (
+    'maison2.png',
+    'Vous allez bientôt rencontrer quelqu\'un qui changera votre vie.',
+    4
+  );
 
-INSERT INTO destin (photoillustration, destin)
-VALUES 
-('image1.jpg', 'Dans 10 ans, vous serez en train de diriger votre propre entreprise prospère qui offre des services innovants et impacte positivement la société.'),
-('image2.jpg', 'Dans 5 ans, vous serez un expert dans votre domaine avec une réputation bien établie, ayant travaillé sur des projets de grande envergure et ayant fait des contributions significatives.'),
-('image3.jpg', 'Dans 7 ans, vous aurez réalisé votre rêve de faire un tour du monde, ayant visité de nombreux pays et expérimenté différentes cultures.'),
-('image4.jpg', 'Dans 1 ans, vous serez un leader reconnu dans votre communauté, ayant créé un impact significatif sur les causes qui vous tiennent à cœur.'),
-('image5.jpg', 'Dans 2 ans, vous serez en train de vivre dans la maison de vos rêves, un lieu de paix et de confort où vous pourrez vous détendre et profiter de votre vie.'),
-('image6.jpg', 'Dans 30 ans, vous aurez atteint un niveau de santé et de forme physique optimal, ayant développé des habitudes de vie saines qui vous ont aidé à vivre pleinement.'),
-('image7.jpg', 'Dans 20 ans, vous serez un expert dans l\'art de la méditation, ayant atteint un niveau de paix et de sérénité intérieure qui vous permet de faire face aux défis de la vie avec confiance.'),
-('image8.jpg', 'Dans 3 ans, vous serez en train de travailler sur un projet qui changera la donne dans votre industrie, ayant créé une innovation qui révolutionnera la façon dont les choses sont faites.'),
-('image9.jpg', 'Dans 18 ans, vous serez un auteur publié, ayant partagé votre histoire inspirante avec le monde et touché la vie de nombreuses personnes avec votre travail.'),
-('image10.jpg', 'Dans 15 ans, vous serez en train de vivre une vie remplie de passion et de créativité, ayant exploré différents aspects de votre personnalité et réalisé vos rêves les plus fous.');
+INSERT INTO
+  prediction (photo, prediction, idtypereve)
+VALUES
+  (
+    'maison1.png',
+    'Vous allez bientôt déménager dans une grande maison',
+    5
+  ),
+  (
+    'ecole1.png',
+    'Vous allez réussir à obtenir votre diplôme avec mention',
+    5
+  );
+
+INSERT INTO
+  reve (idutilisateur, date, idtype)
+VALUES
+  (1, '2022-05-01', 2),
+  (2, '2022-05-02', 1);
+
+INSERT INTO
+  reve (idutilisateur, date, idtype)
+VALUES
+  (1, '2023-05-07', 2);
+
+INSERT INTO
+  reve (idutilisateur, date, idtype)
+VALUES
+  (2, '2023-05-06', 3);
+
+INSERT INTO
+  reve (idutilisateur, date, idtype)
+VALUES
+  (1, '2023-05-05', 1);
+
+INSERT INTO
+  reve (idutilisateur, date, idtype)
+VALUES
+  (3, '2023-05-04', 4);
+
+INSERT INTO
+  reve (idutilisateur, date, idtype)
+VALUES
+  (2, '2023-05-03', 2);
+
+INSERT INTO
+  evaluationprediction (idreve, etoile, commentaire)
+VALUES
+  (
+    1,
+    4,
+    'Bonne prédiction, mais manque de détails.'
+  ),
+  (2, 5, 'Prédiction exacte, très impressionnant !');
+
+INSERT INTO
+  evaluationprediction (idreve, etoile, commentaire)
+VALUES
+  (
+    1,
+    4,
+    'J''ai trouvé cette prédiction intéressante !'
+  );
+
+INSERT INTO
+  evaluationprediction (idreve, etoile, commentaire)
+VALUES
+  (2, 5, 'La prédiction s''est avérée vraie !');
+
+INSERT INTO
+  evaluationprediction (idreve, etoile, commentaire)
+VALUES
+  (
+    3,
+    3,
+    'Pas vraiment convaincu par cette prédiction...'
+  );
+
+INSERT INTO
+  evaluationprediction (idreve, etoile, commentaire)
+VALUES
+  (
+    4,
+    2,
+    'Je ne crois pas du tout à cette prédiction.'
+  );
+
+INSERT INTO
+  evaluationprediction (idreve, etoile, commentaire)
+VALUES
+  (
+    5,
+    1,
+    'Je n''ai pas du tout aimé cette prédiction.'
+  );
+
+INSERT INTO
+  destin (photoillustration, destin)
+VALUES
+  (
+    'image1.jpg',
+    'Dans 10 ans, vous serez en train de diriger votre propre entreprise prospère qui offre des services innovants et impacte positivement la société.'
+  ),
+  (
+    'image2.jpg',
+    'Dans 5 ans, vous serez un expert dans votre domaine avec une réputation bien établie, ayant travaillé sur des projets de grande envergure et ayant fait des contributions significatives.'
+  ),
+  (
+    'image3.jpg',
+    'Dans 7 ans, vous aurez réalisé votre rêve de faire un tour du monde, ayant visité de nombreux pays et expérimenté différentes cultures.'
+  ),
+  (
+    'image4.jpg',
+    'Dans 1 ans, vous serez un leader reconnu dans votre communauté, ayant créé un impact significatif sur les causes qui vous tiennent à cœur.'
+  ),
+  (
+    'image5.jpg',
+    'Dans 2 ans, vous serez en train de vivre dans la maison de vos rêves, un lieu de paix et de confort où vous pourrez vous détendre et profiter de votre vie.'
+  ),
+  (
+    'image6.jpg',
+    'Dans 30 ans, vous aurez atteint un niveau de santé et de forme physique optimal, ayant développé des habitudes de vie saines qui vous ont aidé à vivre pleinement.'
+  ),
+  (
+    'image7.jpg',
+    'Dans 20 ans, vous serez un expert dans l\'art de la méditation, ayant atteint un niveau de paix et de sérénité intérieure qui vous permet de faire face aux défis de la vie avec confiance.'
+  ),
+  (
+    'image8.jpg',
+    'Dans 3 ans, vous serez en train de travailler sur un projet qui changera la donne dans votre industrie, ayant créé une innovation qui révolutionnera la façon dont les choses sont faites.'
+  ),
+  (
+    'image9.jpg',
+    'Dans 18 ans, vous serez un auteur publié, ayant partagé votre histoire inspirante avec le monde et touché la vie de nombreuses personnes avec votre travail.'
+  ),
+  (
+    'image10.jpg',
+    'Dans 15 ans, vous serez en train de vivre une vie remplie de passion et de créativité, ayant exploré différents aspects de votre personnalité et réalisé vos rêves les plus fous.'
+  );

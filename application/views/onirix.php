@@ -15,7 +15,8 @@
     <?php include 'components/navbar.php'; ?>
     <!-- Header End -->
     <?php include 'components/head.php'; ?>
-    <div class="breadcrumb-option spad set-bg" data-setbg="<?php echo site_url('assets/img/about/3d08e03cb40252526fee2036a67f07f1.gif'); ?>">
+    <div class="breadcrumb-option spad set-bg"
+        data-setbg="<?php echo site_url('assets/img/about/3d08e03cb40252526fee2036a67f07f1.gif'); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
